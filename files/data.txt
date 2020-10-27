@@ -1,0 +1,8 @@
+A try and except block is used for error handling in Python.
+
+Try: Helps to test the code. If the code inside the try block is error free it is executed. Otherwise the error gets caught and control goes to the except block.
+Except: Except displays the error message.
+Else: Executes if there is no error in the code in the try block.
+Finally: Executes independently of the try-except block results.
+The Else and Finally block are optional but it is considered a good programming practice to include them.
+The Else and Finally block are optional but it is considered a good programming practice to include them.
