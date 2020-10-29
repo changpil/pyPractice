@@ -3,7 +3,7 @@
 import yaml
 
 try:
-    with open(r'./data.yaml','r') as f:
+    with open(r'data.yaml', 'r') as f:
         # y_object = yaml.load(f) # Warning sign
         y_object = yaml.safe_load(f)
 except yaml.YAMLError as e:
@@ -11,5 +11,5 @@ except yaml.YAMLError as e:
     raise Exception
 print(y_object)
 
-with open(r'./data.yaml', 'w') as f:
+with open(r'data.yaml', 'w') as f:
     yaml.dump(y_object, f)
