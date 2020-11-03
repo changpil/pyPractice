@@ -1,0 +1,7 @@
+2018:01:17:10:34:00 ERROR Something bad happened
+2018:01:17:10:34:00 DEBUG Something bad happened
+2018:01:17:10:34:00 WARN  Something bad happened
+2018:01:17:10:34:00 INFO  Something bad happened
+2018:01:17:10:34:00 ERROR Something bad happened
+2018:01:17:10:34:00 ERROR Something else crashed
+2018:01:17:10:34:00 ERROR Something crashed

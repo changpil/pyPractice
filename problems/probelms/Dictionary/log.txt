@@ -1,0 +1,23 @@
+Feb 12 08:17:01 ubuntu CRON[107394]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 08:17:01 ubuntu CRON[107394]: pam_unix(cron:session): session closed for user root
+Feb 12 09:17:01 ubuntu CRON[107586]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 09:17:01 ubuntu CRON[107586]: pam_unix(cron:session): session closed for user root
+Feb 12 10:17:01 ubuntu CRON[107788]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 10:17:01 ubuntu CRON[107788]: pam_unix(cron:session): session closed for user root
+Feb 12 11:17:01 ubuntu CRON[107988]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 11:17:01 ubuntu CRON[107988]: pam_unix(cron:session): session closed for user root
+Feb 12 12:17:01 ubuntu CRON[108178]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 12:17:01 ubuntu CRON[108178]: pam_unix(cron:session): session closed for user root
+Feb 12 13:17:01 ubuntu CRON[108478]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 13:17:01 ubuntu CRON[108478]: pam_unix(cron:session): session closed for user root
+Feb 12 14:17:01 ubuntu CRON[108683]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 14:17:01 ubuntu CRON[108683]: pam_unix(cron:session): session closed for user root
+Feb 12 15:17:01 ubuntu CRON[108880]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 15:17:01 ubuntu CRON[108880]: pam_unix(cron:session): session closed for user root
+Feb 12 16:17:01 ubuntu CRON[109063]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 16:17:01 ubuntu CRON[109063]: pam_unix(cron:session): session closed for user root
+Feb 12 16:32:41 ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Feb 12 16:32:41 ubuntu pkexec: pam_systemd(polkit-1:session): Cannot create session: Already running in a session
+Feb 12 16:32:41 ubuntu pkexec[109558]: chang: Executing command [USER=root] [TTY=unknown] [CWD=/home/chang] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Feb 12 17:17:01 ubuntu CRON[109694]: pam_unix(cron:session): session opened for user root by (uid=0)
+Feb 12 17:17:01 ubuntu CRON[109694]: pam_unix(cron:session): session closed for user root

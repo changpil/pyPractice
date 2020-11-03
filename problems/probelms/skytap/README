@@ -1,0 +1,26 @@
+
+Before setting up run environment, you need,
+python3 and pip3
+
+Setup this virtual python environment
+1. pip3 install virtualenv
+2. mkdir pvenv in your workspace
+3. virtualenv -p python3 pvenv
+4. source pvenv/bin/activate
+
+How to run this test in the python virtual environment
+1. Copy tar.gz to your wrorkspace.
+2. extract tar file: tar xvf skytap.tar.gz/ tar xvf skytap.chang
+3. go to skytap directory from the extracted folder
+4. python setup.py install
+5. Set PYTHONPATH to skytap directory (command for current directory: pwd)
+   i.e.> export PYTHONPATH=/Users/chang/Workspace/skytap
+
+How to run tests:
+
+     "pytest -m v1"     : For version 1 run, suspend, resume, poweroff tests (+30 min)
+     "pytest -m v2"     : For version 2 run, suspend, resume, poweroff tests (+30 min)
+     "pytest -m vms"    : For invlaid VMs, test if there are invlid VMs in the environment
+
+How to escape virtual python environment
+deactivate
