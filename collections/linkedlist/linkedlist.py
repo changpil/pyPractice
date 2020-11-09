@@ -124,7 +124,7 @@ class LinkedList:
             nth = nth.next_element
             cur = cur.next_element
         return cur.data
-    
+
     def __str__(self):
         p = self.head
         s = "head-->"

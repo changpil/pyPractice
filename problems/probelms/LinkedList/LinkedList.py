@@ -31,7 +31,13 @@ class LinkedList:
 
         return False
 
-
+    def __str__(self):
+        ss=str()
+        i = self.head
+        while i != None:
+            ss += str(i.data) + " ==> "
+            i=i.next
+        return ss + "None"
 
     def p(self, depth =100):
         p = self.head

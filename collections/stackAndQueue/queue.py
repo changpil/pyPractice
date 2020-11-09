@@ -1,17 +1,30 @@
 class Queue:
     def __init__(self):
         self.q = list()
-    def put(self, item):
+    def enqueue(self, item):
         self.q.insert(0, item)
-    def get(self):
+    def dequeue(self):
         return self.q.pop()
-
-q = Queue()
-for i in range(5):
-    q.put(i)
-
-for _ in range(5):
-    print(q.get())
+    def front(self):
+        return self.q[-1]
+    def back(self):
+        return self.q[0]
+    def isEmpty(self):
+        return True if len(self.q) == 0 else False
+    def size(self):
+        return len(self.s)
+    def __str__(self):
+        s = ("-"*7 + " queue " + "-"*7 + "\n")
+        for i in range(len(self.q)):
+            s += f" --> {self.q[i]}"
+        s += "\n" + "-" * 20 + "\n"
+        return s
+# q = Queue()
+# for i in range(5):
+#     q.enqueue(i)
+#
+# for _ in range(5):
+#     print(q.dequeue())
 
 '''
 # python queue are synchronous queue
