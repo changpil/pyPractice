@@ -1,56 +1,53 @@
 class Queue:
-
-    class Node:
-        def __init__(self, data, next):
-            self.data = data
-            self.next = next
-
     def __init__(self):
-        self.head = self.Node("TAIL",None)
-
-    def add(self, data):
-        pre = self.head
-        ptr = pre.next
-        if ptr == None:
-            new_node = self.Node(data, self.head)
-            self.head = new_node
-            return
-        while True:
-            if ptr.data == "TAIL":
-                break
-            pre = ptr
-            ptr= ptr.next
-        new_node = self.Node(data, ptr)
-        pre.next = new_node
-
-
-    def remove(self):
-        if self.head.data == "TAIL":
-            raise IndexError
-        rv = self.head.data
-        self.head = self.head.next
-        return rv
-
-    def peek(self):
-        if self.head.data == "TAIL":
-            raise IndexError
-        return self.head.data
-
+        self.q = list()
+    def enqueue(self, item):
+        self.q.insert(0, item)
+    def dequeue(self):
+        return self.q.pop()
+    def front(self):
+        return self.q[-1]
+    def back(self):
+        return self.q[0]
     def isEmpty(self):
-        rv = False
-        if self.head.data == "TAIL":
-            rv = True
-        return rv
-
+        return True if len(self.q) == 0 else False
+    def size(self):
+        return len(self.s)
     def __str__(self):
-        ptr = self.head
-        rv = ""
-        while True:
-            if ptr.data == "TAIL":
-                rv += "None"
-                break
-            rv += "{} => ".format(ptr.data)
-            ptr = ptr.next
-        return rv
+        s = ("-"*7 + " queue " + "-"*7 + "\n")
+        for i in range(len(self.q)):
+            s += f" --> {self.q[i]}"
+        s += "\n" + "-" * 20 + "\n"
+        return s
+# q = Queue()
+# for i in range(5):
+#     q.enqueue(i)
+#
+# for _ in range(5):
+#     print(q.dequeue())
 
+'''
+# python queue are synchronous queue
+import threading, queue
 
+q = queue.Queue()
+
+def worker():
+    while True:
+        item = q.get()
+        print(f'Working on {item}')
+        print(f'Finished {item}')
+        q.task_done()
+
+# turn-on the worker thread
+threading.Thread(target=worker, daemon=True).start()
+
+# send thirty task requests to the worker
+for item in range(30):
+    q.put(item)
+print('All task requests sent\n', end='')
+
+# block until all tasks are done
+q.join()
+print('All work completed')
+'''

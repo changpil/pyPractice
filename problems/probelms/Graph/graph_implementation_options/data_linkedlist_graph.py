@@ -1,5 +1,5 @@
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from LinkedList.LinkedList import LinkedList
 
 class Graph:
