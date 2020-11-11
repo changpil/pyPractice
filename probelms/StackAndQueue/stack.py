@@ -17,17 +17,17 @@ class Stack:
             s += f" --> {self.s[i]}"
         s += "\n" + "-" * 20 + "\n"
         return s
-# s = Stack()
-# for i in range(5):
-#     s.push(i)
-#
-# for _ in range(5):
-#     print(s.pop())
+s = Stack()
+for i in range(5):
+    s.push(i)
 
-# s = Stack()
-# s.push(-3)
-# s.push(10)
-# s.push(4)
-# s.push(9)
-#
-# print(s)
+for _ in range(5):
+    print(s.pop())
+
+s = Stack()
+s.push(-3)
+s.push(10)
+s.push(4)
+s.push(9)
+
+print(s)
