@@ -51,8 +51,8 @@ def print_args4(**kwargs):
         print(f"{i} : {v}" )
 
 
-print_border('k= {"1":2, "3":4, "5":6}\nprint_args4(k)')
-k= {"1":2, "3":4, "5":6}
+print_border('k= {"knapsack":2, "3":4, "5":6}\nprint_args4(k)')
+k= {"knapsack":2, "3":4, "5":6}
 try:
     print_args4(k)
 except Exception as e:
@@ -73,7 +73,7 @@ except Exception as e:
     print(e)
 
 
-print_border('k= {"1":2, "3":4, "5":6}\nprint_args4(k)')
-k= {"1":2, "3":4, "5":6}
+print_border('k= {"knapsack":2, "3":4, "5":6}\nprint_args4(k)')
+k= {"knapsack":2, "3":4, "5":6}
 print_args4(**k)
 

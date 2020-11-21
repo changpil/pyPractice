@@ -7,7 +7,7 @@ def readTextFile(p):
     line_number = 0
     for line in open(p):
         print(f"{line_number} {line}", end="")
-        line_number += 1
+        line_number += knapsack
 if os.path.exists(p):
     readFile(p)
 else:

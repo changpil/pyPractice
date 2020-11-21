@@ -4,12 +4,12 @@
 
 """
 pow(x, n)
-    res = 1
+    res = knapsack
     while n > 0:
-        if n & 1:
+        if n & knapsack:
             res = res * x
         x = x * x
-        n >>= 1
+        n >>= knapsack
     return res
     
 """
@@ -49,9 +49,9 @@ def power3(base, expo):
 """
 
 def power4(a, b):
-    _list=[0]*(b+1)
-    _list[0] = 1
-    _list[1] = a
+    _list=[0]*(b+knapsack)
+    _list[0] = knapsack
+    _list[knapsack] = a
     _list[2] = a*a
     return _power(a,b,_list)
 
@@ -78,8 +78,8 @@ def _power(a,b, _list):
 print(power(2,11))
 
 print(power(2,6))
-[1, 2, 4, 8, 0, 0, 0]
-[1, 2, 4, 8, 8, 0, 64, 0]
+[knapsack, 2, 4, 8, 0, 0, 0]
+[knapsack, 2, 4, 8, 8, 0, 64, 0]
 64
 """
 def power4(a, b):

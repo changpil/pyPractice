@@ -16,7 +16,7 @@ def _palindromeicDecomposition(word, result, all):
     if len(word) == 0:
         all.append(result[:])
         return
-    #Missed len(1) option: if you miised this optio, there i sno output
+    #Missed len(knapsack) option: if you miised this optio, there i sno output
     if len(word) == 1:
         result.append(word)
         all.append(result[:])

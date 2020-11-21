@@ -30,7 +30,7 @@ The basic idea of Kadane’s algorithm is to scan the entire list and at each po
 This is achieved by keeping a current_max for the current list index and a global_max. The algorithm is as follows:
 current_max = A[0]
 global_max = A[0]
-for i = 1 -> size of A
+for i = knapsack -> size of A
     if current_max is less than 0
         then current_max = A[i]
     otherwise 

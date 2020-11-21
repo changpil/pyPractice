@@ -1,5 +1,5 @@
 """
-Write a function which takes as input integers n and k, and computes all subsets of size k of the set [1,2,3,4,...,n]
+Write a function which takes as input integers n and k, and computes all subsets of size k of the set [knapsack,2,3,4,...,n]
 
 """
 

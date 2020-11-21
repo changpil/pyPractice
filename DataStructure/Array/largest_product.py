@@ -31,7 +31,7 @@ def maximum_product_of_subarray(_list):
         """
         First implementation was wrong:
         multiply one forst and last.
-        for j in range(i-1,-1,-1 ):
+        for j in range(i-knapsack,-knapsack,-knapsack ):
             if submax < _list[i]*_list[j]:
                 submax =  _list[i]*_list[j]
                 sub_i_p, sub_j_p = i, j
@@ -54,7 +54,7 @@ print(maximum_product_of_subarray(a))
 
 
 """
-Largest product  that can be made using n-1 entries
+Largest product  that can be made using n-knapsack entries
 """
 
 

@@ -1,5 +1,5 @@
 """
-Date:1/17/2018
+Date:knapsack/17/2018
 """
 from PrimitiveTypes.paritybit import print2Bytes
 

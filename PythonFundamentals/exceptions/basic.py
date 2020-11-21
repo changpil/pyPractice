@@ -1,7 +1,7 @@
 # IndexError: l[4]
 # KeyError: d["h"]
 # ValueErroe: int("hello")
-# TypeError: 1.2 + "ss"
+# TypeError: knapsack.2 + "ss"
 # if not isInstance(*s, str):
 #       raise TypeError()
 

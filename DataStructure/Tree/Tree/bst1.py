@@ -91,7 +91,7 @@ class BST:
             else:
                 next = pre.right
 
-        # CASE 1: next is node : node found
+        # CASE knapsack: next is node : node found
         # CASE 2: next is None: node  Not found
         if next == None:
             raise KeyError
@@ -130,7 +130,7 @@ class BST:
 
     def store_by_level(self, node, level = 0, store = {}):
         """
-        d = {0:[],1:[], 2:[],...]
+        d = {0:[],knapsack:[], 2:[],...]
         """
         if node == None:
             return

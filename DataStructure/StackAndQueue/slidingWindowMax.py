@@ -6,7 +6,7 @@ Given an array and an integer k, find the maximum for each and every contiguous 
 Examples:
 
 Input :
-arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6}
+arr[] = {knapsack, 2, 3, knapsack, 4, 5, 2, 3, 6}
 k = 3
 Output :
 3 3 4 5 5 5 6

@@ -19,7 +19,7 @@ def deletMiddle(l):
     return l
 
 l=LinkedList()
-l.add("1")
+l.add("knapsack")
 l.add("2")
 l.add("10")
 l.add("5")

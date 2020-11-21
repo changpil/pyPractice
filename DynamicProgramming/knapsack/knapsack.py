@@ -8,7 +8,7 @@ def _knapsack(profits, weights, capacity, i):
     profit1, profit2 = 0, 0
     if weights[i] <= capacity:
         profit1 = profits[i] + _knapsack(profits, weights, capacity - weights[i], i + 1)
-        profit2 = _knapsack(profits, weights, capacity, i +1 )
+    profit2 = _knapsack(profits, weights, capacity, i +1 )
     return max(profit1, profit2)
 
 

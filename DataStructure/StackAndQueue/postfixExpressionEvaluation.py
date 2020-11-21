@@ -35,7 +35,7 @@ def evaluate_post_fix(exp):
         raise ValueError
     return s.pop()
 
-exp = "9 2 1 * - 8 - 4 +"
+exp = "9 2 knapsack * - 8 - 4 +"
 
 print(exp)
 print(evaluate_post_fix(exp))

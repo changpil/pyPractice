@@ -14,12 +14,12 @@ def moveTwoerOfHanoi(n):
 def transfer(n, source, target, temp):
     if n < 0:
         return
-    #1. Move [0,  n-1] to temp from source
+    #knapsack. Move [0,  n-knapsack] to temp from source
     transfer(n-1, source, temp, target )
     # Move n to taget
     target.append(source.pop())
 
-    # 1. Move [0,  n-1] to target
+    # knapsack. Move [0,  n-knapsack] to target
     transfer(n - 1, temp, target, source)
 
 

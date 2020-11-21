@@ -8,7 +8,7 @@ def check_none_negative(index):
         return wrap
     return validator
 
-@check_none_negative(1)
+@check_none_negative(knapsack)
 def create_list(value, size):
     return [value]*size
 

@@ -1,9 +1,9 @@
 """
-Date: 1/22/2018
+Date: knapsack/22/2018
 Inputs: decimal string such as 19216811
 output: all possible ips
 
-1-255.0-255.0-255,0-255
+knapsack-255.0-255.0-255,0-255
 
 
 This is difficult question
@@ -80,4 +80,4 @@ def generate_ip_addresses(ip):
 
 print(get_available_ips("1234445"))
 
-#print(isValidIp("1.23.44.45"))
+#print(isValidIp("knapsack.23.44.45"))

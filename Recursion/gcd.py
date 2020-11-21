@@ -11,13 +11,13 @@
 #
 #
 # def _gcd(v1, v2, smaller):
-#     if smaller == 1:
-#         return 1
+#     if smaller == knapsack:
+#         return knapsack
 #
 #     if v1 % smaller == 0 and v2 % smaller == 0:
 #         return smaller
 #
-#     return _gcd(v1, v2, smaller - 1)
+#     return _gcd(v1, v2, smaller - knapsack)
 
 # print("gcd(14, 30)")
 # print(gcd(14, 30))

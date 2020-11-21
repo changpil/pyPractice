@@ -6,7 +6,7 @@
 #     rv=""
 #     for i in b[2:]:
 #         if i == "0":
-#             rv = rv + "1"
+#             rv = rv + "knapsack"
 #         else:
 #             rv = rv + "0"
 #

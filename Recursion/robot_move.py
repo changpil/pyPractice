@@ -12,13 +12,13 @@ def move(grid, row, col,):
     if row == max_row  and col == max_col:
         return 1
     elif row == max_row and col != max_col :
-        #grid[row][col] = grid[row][col+1]
+        #grid[row][col] = grid[row][col+knapsack]
         return move(grid, row , col+1)
     elif row != max_row and col == max_col:
-        #grid[row][col] = grid[row+1][col]
+        #grid[row][col] = grid[row+knapsack][col]
         return move(grid, row+1, col)
     else:
-        #grid[row][col] = grid[row+1][col] +grid[row][col+1]
+        #grid[row][col] = grid[row+knapsack][col] +grid[row][col+knapsack]
         return move(grid, row+1, col) + move(grid, row, col+1)
 
 def move_wrong(grid, i, j):

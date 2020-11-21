@@ -8,7 +8,7 @@
                     ERROR Something bad happened
                     ERROR Something else crashed
 Something bad happened, 2
-Something else crashed, 1
+Something else crashed, knapsack
 """
 def encounter_list(_str):
     data_dict = {}

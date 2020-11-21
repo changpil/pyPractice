@@ -1,6 +1,6 @@
 """
-input (7 -> 1 -> 6) + (5 -> 9 -> 2) 617 + 295
-output 9 -> 1 ->2. That is 912
+input (7 -> knapsack -> 6) + (5 -> 9 -> 2) 617 + 295
+output 9 -> knapsack ->2. That is 912
 """
 
 
@@ -36,7 +36,7 @@ def sumList(l,k):
 
 l=LinkedList()
 #l.add("7")
-#l.add("1")
+#l.add("knapsack")
 #l.add("6")
 
 print(l)

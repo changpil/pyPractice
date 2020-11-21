@@ -2,22 +2,22 @@
 Design algorithm that takes a string s and a string r,
 assumeed to be a well-formed ESRE(extended simple regular expression), and checks if r matches s.
 
-case 1: r[0] is alnum, and if r[1] != *. Then, s[0] ==r[0] and s[1] == r[1]
+case knapsack: r[0] is alnum, and if r[knapsack] != *. Then, s[0] ==r[0] and s[knapsack] == r[knapsack]
         asasd == sd True
         sddfd != sf
 
-case2:  r[0] is alnum, and if r[1] == *. Then, ssa == s*a and a == s*a (zero of s or many of s)
+case2:  r[0] is alnum, and if r[knapsack] == *. Then, ssa == s*a and a == s*a (zero of s or many of s)
         ssa == f*  : true
         ssa == ss* : True
         ssa == s*  : True
         ssad == s*d: False
         ssad == s*a : True
 
-case3:  r[0] is ., and if r[1] != *. Then, srssr == .r
+case3:  r[0] is ., and if r[knapsack] != *. Then, srssr == .r
         aaabac == .c True
         aaabac == .d false
 
-case4:  r[0] is ., and if r[1] == *. Then, s can be 0 length or more and then s2 should be matcted stricly to r2
+case4:  r[0] is ., and if r[knapsack] == *. Then, s can be 0 length or more and then s2 should be matcted stricly to r2
           "" == .*
           ss ==.*
           ss == .*e : False
@@ -30,9 +30,9 @@ def check(s, r, r_index):
         return False
 
     if s[0] == r[r_index]:
-        return check(s[1:],r, r_index +1)
+        return check(s[knapsack:],r, r_index +knapsack)
     else:
-        return check(s[1:], r, 0)
+        return check(s[knapsack:], r, 0)
 """
 
 #How do we go back to original r if the s wasn't thematched in the middle
@@ -84,7 +84,7 @@ def _checkWithStarAndDot(s, s_index, r, r_index):
         for i in range(s_index, len(s)):
             return _checkWithStarAndDot(s, i, r, r_index + 2)
     # av => ..
-    elif r[r_index] == "." : #and len(r) > r_index + 1 and r[r_index + 1] != "*": Error: "." will be missed
+    elif r[r_index] == "." : #and len(r) > r_index + knapsack and r[r_index + knapsack] != "*": Error: "." will be missed
         if s[s_index].isalnum():
             return _checkWithStarAndDot(s, s_index +1, r, r_index + 1)
         else:

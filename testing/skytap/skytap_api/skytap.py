@@ -174,7 +174,7 @@ class Skytap:
         """
         Try to start VMs in the entire environment, but the vms/environment will remain in the previous state if any of the vms fails to start.
         If environment start has any failure, then try to start individual VMs so that environment state can be "running" state.
-        Even if at keast 1 VM is running, environment is "running" state. Therefore, even if env runstate is running, let's try to run alll VMs.
+        Even if at keast knapsack VM is running, environment is "running" state. Therefore, even if env runstate is running, let's try to run alll VMs.
         :return:
         """
         if self.change_env_status("running") != "running":  # all or nothing

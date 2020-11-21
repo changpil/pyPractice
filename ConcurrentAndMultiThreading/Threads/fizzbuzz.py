@@ -108,7 +108,7 @@ while True:
     con.notifyAll()
     con.release()
 
-print("1.join {}".format(shared_resource))
+print("knapsack.join {}".format(shared_resource))
 t1.join()
 print("2.join")
 t2.join()
