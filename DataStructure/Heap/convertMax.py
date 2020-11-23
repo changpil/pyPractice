@@ -35,9 +35,9 @@ def minHeapify(a, i):
             return
     return
 
-print("Expected Output: [-2, knapsack, 5, 9, 4, 6, 7]")
+print("Expected Output: [-2, Pattern1:knapsack, 5, 9, 4, 6, 7]")
 print(convertMax([9, 4, 7, 1, -2, 6, 5]))
-print("Expected Output [knapsack, 2, 7, 3, 4, 14, 9, 12, 16, 15]")
+print("Expected Output [Pattern1:knapsack, 2, 7, 3, 4, 14, 9, 12, 16, 15]")
 print(convertMax([16, 15, 14, 12, 4, 7, 9, 2, 3, 1]))
 
 # Recursive version

@@ -2,22 +2,22 @@
 Design algorithm that takes a string s and a string r,
 assumeed to be a well-formed ESRE(extended simple regular expression), and checks if r matches s.
 
-case knapsack: r[0] is alnum, and if r[knapsack] != *. Then, s[0] ==r[0] and s[knapsack] == r[knapsack]
+case Pattern1:knapsack: r[0] is alnum, and if r[Pattern1:knapsack] != *. Then, s[0] ==r[0] and s[Pattern1:knapsack] == r[Pattern1:knapsack]
         asasd == sd True
         sddfd != sf
 
-case2:  r[0] is alnum, and if r[knapsack] == *. Then, ssa == s*a and a == s*a (zero of s or many of s)
+case2:  r[0] is alnum, and if r[Pattern1:knapsack] == *. Then, ssa == s*a and a == s*a (zero of s or many of s)
         ssa == f*  : true
         ssa == ss* : True
         ssa == s*  : True
         ssad == s*d: False
         ssad == s*a : True
 
-case3:  r[0] is ., and if r[knapsack] != *. Then, srssr == .r
+case3:  r[0] is ., and if r[Pattern1:knapsack] != *. Then, srssr == .r
         aaabac == .c True
         aaabac == .d false
 
-case4:  r[0] is ., and if r[knapsack] == *. Then, s can be 0 length or more and then s2 should be matcted stricly to r2
+case4:  r[0] is ., and if r[Pattern1:knapsack] == *. Then, s can be 0 length or more and then s2 should be matcted stricly to r2
           "" == .*
           ss ==.*
           ss == .*e : False
@@ -30,9 +30,9 @@ def check(s, r, r_index):
         return False
 
     if s[0] == r[r_index]:
-        return check(s[knapsack:],r, r_index +knapsack)
+        return check(s[Pattern1:knapsack:],r, r_index +Pattern1:knapsack)
     else:
-        return check(s[knapsack:], r, 0)
+        return check(s[Pattern1:knapsack:], r, 0)
 """
 
 #How do we go back to original r if the s wasn't thematched in the middle
@@ -84,7 +84,7 @@ def _checkWithStarAndDot(s, s_index, r, r_index):
         for i in range(s_index, len(s)):
             return _checkWithStarAndDot(s, i, r, r_index + 2)
     # av => ..
-    elif r[r_index] == "." : #and len(r) > r_index + knapsack and r[r_index + knapsack] != "*": Error: "." will be missed
+    elif r[r_index] == "." : #and len(r) > r_index + Pattern1:knapsack and r[r_index + Pattern1:knapsack] != "*": Error: "." will be missed
         if s[s_index].isalnum():
             return _checkWithStarAndDot(s, s_index +1, r, r_index + 1)
         else:

@@ -1,6 +1,6 @@
 
 """
-Date: knapsack/17/2018
+Date: Pattern1:knapsack/17/2018
 Result: need sharpness
 inout: 64 bits
 output: charity bit (true or false)
@@ -11,7 +11,7 @@ def print2Bytes(bits):
         bit = (bits & 1 )  # (bits8 |  0) does not work because other bits will follow.
         bits = bits >> 1
         if bit:
-            binary.insert(0,"knapsack")
+            binary.insert(0,"Pattern1:knapsack")
         else:
             binary.insert(0,"0")
     print("".join(binary))

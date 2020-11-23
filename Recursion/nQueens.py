@@ -42,7 +42,7 @@ def _row(board, i,j):
 
 
 # Mistake by infinite loop:
-#by return doing _cross(board, i + knapsack, j + knapsack )  and _cross(board, i -knapsack, j -knapsack)
+#by return doing _cross(board, i + Pattern1:knapsack, j + Pattern1:knapsack )  and _cross(board, i -Pattern1:knapsack, j -Pattern1:knapsack)
 
 def _cross(board, i, j, direction = None):
     if i < 0 or j < 0:

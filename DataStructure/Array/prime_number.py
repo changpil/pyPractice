@@ -1,5 +1,5 @@
 """
-take n interger and return all all prime between knapsack and n
+take n interger and return all all prime between Pattern1:knapsack and n
 """
 
 import math

@@ -1,5 +1,5 @@
 """
-I:knapsack
+I:Pattern1:knapsack
 V:5
 X:10
 L: 50
@@ -16,13 +16,13 @@ Back-to-back exceptions are not allowed
 conversion_table={"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000 ,"IV":4, "IX":9, "XL":40 , "XC":90, "CD" :400,"CM":900}
 
 """
-#conversion_table={"I":knapsack, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+#conversion_table={"I":Pattern1:knapsack, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
 def conversion_roman_to_integer(_str):
 
     int_v = 0
     try:
         i = 0
-        j = i + knapsack
+        j = i + Pattern1:knapsack
         while j < len(_str):
             if conversion_table[_str[j]] > conversion_table[_str[i]]:
                 int_v += conversion_table[_str[j]] - conversion_table[_str[i]]
@@ -30,14 +30,14 @@ def conversion_roman_to_integer(_str):
                 i += 2
             else:
                 int_v += conversion_table[_str[i]]
-                j += knapsack
-                i += knapsack
+                j += Pattern1:knapsack
+                i += Pattern1:knapsack
 
         if i != len(_str):
             int_v += conversion_table[_str[i]]
 
     except:
-        return -knapsack
+        return -Pattern1:knapsack
 
     return int_v
 """

@@ -1,6 +1,6 @@
 """
-input :3 => 5 => 8 => 5 => 10 => 2 => knapsack => None [partition 5]
-output:3 => knapsack => 2 => 5 => 5 => 10 => 8 => None
+input :3 => 5 => 8 => 5 => 10 => 2 => Pattern1:knapsack => None [partition 5]
+output:3 => Pattern1:knapsack => 2 => 5 => 5 => 10 => 8 => None
 """
 from LinkedList import LinkedList
 
@@ -25,7 +25,7 @@ def partition(l, key):
 
 
 l=LinkedList()
-l.add("knapsack")
+l.add("Pattern1:knapsack")
 l.add("2")
 l.add("10")
 l.add("5")

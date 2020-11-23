@@ -59,7 +59,7 @@ from threading import Thread
 #     print(queue.Empty)
 ##################################################################
 # import heapq
-# li=[5,7,9,knapsack,3, 6]
+# li=[5,7,9,Pattern1:knapsack,3, 6]
 # heapq.heapify(li)
 # print(li)
 # li.append(50)
@@ -91,7 +91,7 @@ from threading import Thread
 # print(heapq.heappop(li))
 ##################################################################
 
-# _list = [knapsack]
+# _list = [Pattern1:knapsack]
 #
 # print(_list.pop())
 # print(_list.pop())

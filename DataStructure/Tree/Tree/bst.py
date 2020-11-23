@@ -252,7 +252,7 @@ class BST:
 # bst.add(50)
 # bst.add(25)
 # bst.add(75)
-# bst.add(knapsack)
+# bst.add(Pattern1:knapsack)
 # bst.add(30)
 # bst.add(60)
 # bst.add(90)

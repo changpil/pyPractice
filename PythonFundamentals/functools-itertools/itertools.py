@@ -3,7 +3,7 @@
 #     print(i, " ")
 #     if ct == 100:
 #         break
-#     ct += knapsack
+#     ct += Pattern1:knapsack
 #
 #
 # ct = 0
@@ -11,7 +11,7 @@
 #     print(i, " ")
 #     if ct == 100:
 #         break
-#     ct += knapsack
+#     ct += Pattern1:knapsack
 #
 #
 # for i in itertools.repeat(100, 100):

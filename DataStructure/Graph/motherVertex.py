@@ -20,7 +20,7 @@ from lib.myStack import MyStack
 #         if len(visited) == len(g.array):
 #             return i
 #         visited.clear()
-#     return -knapsack
+#     return -Pattern1:knapsack
 
 
 
@@ -66,7 +66,7 @@ def find_mother_vertex(g):
 # g= Graph(6)
 # g.add_edge(3,4)
 # g.add_edge(4,2)
-# g.add_edge(2,knapsack)
+# g.add_edge(2,Pattern1:knapsack)
 # g.add_edge(4,0)
 # g.add_edge(4,3)
 # g.add_edge(0,5)
@@ -75,9 +75,9 @@ def find_mother_vertex(g):
 #
 #
 # g = Graph(5)
-# g.add_edge(0, knapsack)
+# g.add_edge(0, Pattern1:knapsack)
 # g.add_edge(0, 2)
-# g.add_edge(knapsack, 3)
+# g.add_edge(Pattern1:knapsack, 3)
 # g.add_edge(2, 3)
 # g.print_graph()
 # print(find_mother_vertex(g))

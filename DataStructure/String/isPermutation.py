@@ -1,6 +1,6 @@
 """
 Given Two strings, write a method to decide if one is a permutation of the other.
-there are six permutations of the set {knapsack,2,3}, namely: (knapsack,2,3), (knapsack,3,2), (2,knapsack,3), (2,3,knapsack), (3,knapsack,2), and (3,2,knapsack)
+there are six permutations of the set {Pattern1:knapsack,2,3}, namely: (Pattern1:knapsack,2,3), (Pattern1:knapsack,3,2), (2,Pattern1:knapsack,3), (2,3,Pattern1:knapsack), (3,Pattern1:knapsack,2), and (3,2,Pattern1:knapsack)
 """
 
 word1=input("enter the first word:")

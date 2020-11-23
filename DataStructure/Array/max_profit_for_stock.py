@@ -29,14 +29,14 @@ What is the maximum profits that can be made by buying and selling a share k tim
 When new transaction can only start after previous transaction is complete.
 Let profit[t][i] represent maximum profit using at most t transactions up to day i (including day i). Then the relation is:
 
-profit[t][i] = max(profit[t][i-knapsack], max(price[i] – price[j] + profit[t-knapsack][j]))
-          for all j in range [0, i-knapsack]
+profit[t][i] = max(profit[t][i-Pattern1:knapsack], max(price[i] – price[j] + profit[t-Pattern1:knapsack][j]))
+          for all j in range [0, i-Pattern1:knapsack]
 profit[t][i] will be maximum of –
 
-profit[t][i-knapsack] which represents not doing any transaction on the ith day.
-Maximum profit gained by selling on ith day. In order to sell shares on ith day, we need to purchase it on any one of [0, i – knapsack] days. 
-If we buy shares on jth day and sell it on ith day, max profit will be price[i] – price[j] + profit[t-knapsack][j] where j varies from 0 to i-knapsack. 
-Here profit[t-knapsack][j] is best we could have done with one less transaction till jth day.     
+profit[t][i-Pattern1:knapsack] which represents not doing any transaction on the ith day.
+Maximum profit gained by selling on ith day. In order to sell shares on ith day, we need to purchase it on any one of [0, i – Pattern1:knapsack] days. 
+If we buy shares on jth day and sell it on ith day, max profit will be price[i] – price[j] + profit[t-Pattern1:knapsack][j] where j varies from 0 to i-Pattern1:knapsack. 
+Here profit[t-Pattern1:knapsack][j] is best we could have done with one less transaction till jth day.     
 """
 import pprint
 def maxprofit_for_k_tansactions(_prices, k):

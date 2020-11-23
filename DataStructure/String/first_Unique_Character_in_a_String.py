@@ -1,5 +1,5 @@
 """
-Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -knapsack.
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -Pattern1:knapsack.
 
 Examples:
 
@@ -24,7 +24,7 @@ Note: You may assume the string contain only lowercase letters.
 #case  : abcdabc
 #case  : abccba
 
-#knapsack     Solution of O(n)
+#Pattern1:knapsack     Solution of O(n)
 def firstUniqueChar(s):
     data = dict()
     for i, c in enumerate(s):

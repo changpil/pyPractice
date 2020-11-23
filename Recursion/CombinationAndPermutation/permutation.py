@@ -3,13 +3,13 @@ Permutation of string
 """
 """
 def all_perms(elements):
-    if len(elements) <=knapsack:
+    if len(elements) <=Pattern1:knapsack:
         yield elements
     else:
-        for perm in all_perms(elements[knapsack:]):
+        for perm in all_perms(elements[Pattern1:knapsack:]):
             for i in range(len(elements)):
-                # nb elements[0:knapsack] works in both string and list contexts
-                yield perm[:i] + elements[0:knapsack] + perm[i:]
+                # nb elements[0:Pattern1:knapsack] works in both string and list contexts
+                yield perm[:i] + elements[0:Pattern1:knapsack] + perm[i:]
 """
 
 def perm(word):

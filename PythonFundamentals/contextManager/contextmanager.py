@@ -31,7 +31,7 @@ class LoggingContextManager:
 # def my_context_manager():
 #     print("myconext manager")
 #     try:
-#         yield [knapsack,2,3]
+#         yield [Pattern1:knapsack,2,3]
 #         print("Context Manget after yield")
 #
 #     except Exception:

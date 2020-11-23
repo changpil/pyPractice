@@ -44,7 +44,7 @@ def foe(p):
 # def foo(l, index):
 #     return l[index]
 #
-# print(foo([0,knapsack,2,3], -2))
+# print(foo([0,Pattern1:knapsack,2,3], -2))
 
 
 def s0(f):

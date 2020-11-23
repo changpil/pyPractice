@@ -35,7 +35,7 @@ def find_min(g, source, destination):
 
 #
 # g= Graph(6)
-# g.add_edge(0,knapsack)
+# g.add_edge(0,Pattern1:knapsack)
 # g.add_edge(0,2)
 # g.add_edge(0,3)
 # g.add_edge(2,4)
@@ -47,13 +47,13 @@ def find_min(g, source, destination):
 #
 #
 # g= Graph(6)
-# g.add_edge(0,knapsack)
+# g.add_edge(0,Pattern1:knapsack)
 # g.add_edge(0,2)
 # g.add_edge(0,3)
 # g.add_edge(2,5)
 # g.add_edge(3,5)
 # g.add_edge(5,4)
-# g.add_edge(knapsack,3)
+# g.add_edge(Pattern1:knapsack,3)
 #
 # g.print_graph()
 # print(find_min(g, 0, 4))
@@ -84,7 +84,7 @@ def find_min(g, a, b):
         # Get adjacent vertices to the current_node from the list,
         # and if they are not already visited then enqueue them in the Queue
         # and also update their distance from `a`
-        # by adding knapsack in current_nodes's distance
+        # by adding Pattern1:knapsack in current_nodes's distance
         temp = g.array[current_node].head_node
         while (temp is not None):
             if (visited not in temp.data) or (temp.data is b):

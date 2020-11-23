@@ -3,7 +3,7 @@ String to Integer Conversion
 
 -1000
 1000
-knapsack
+Pattern1:knapsack
 0
 
 First letter - or a digit except 0

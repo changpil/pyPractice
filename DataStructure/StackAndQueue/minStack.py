@@ -1,5 +1,5 @@
 # Using your knowledge, create an efficient min() function using a stack.
-# You have to implement the MinStack class which will have a min() function. Whenever min() is called, the minimum value of the stack is returned in O(knapsack) time.
+# You have to implement the MinStack class which will have a min() function. Whenever min() is called, the minimum value of the stack is returned in O(Pattern1:knapsack) time.
 # The element is not popped from the stack. Its value is simply returned.
 from stack import Stack
 

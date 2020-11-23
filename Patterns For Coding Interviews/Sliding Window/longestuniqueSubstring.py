@@ -1,7 +1,7 @@
 # Problem Statement #
 # Given a string, find the length of the longest substring, which has no repeating characters.
 #
-# Example knapsack:
+# Example Pattern1:knapsack:
 #
 # Input: String="aabccbb"
 # Output: 3

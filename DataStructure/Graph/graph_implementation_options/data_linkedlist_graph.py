@@ -44,10 +44,10 @@ class Graph:
     # Function to add an edge from source to destination
     def add_edge(self, source, destination):
         if (source < self.vertices and destination < self.vertices):
-            # As we are implementing a directed graph, (knapsack,0) is not equal to (0,knapsack)
+            # As we are implementing a directed graph, (Pattern1:knapsack,0) is not equal to (0,Pattern1:knapsack)
             self.array[source].insert_at_head(destination)
 
-        # If we were to implement an Undirected Graph i.e (knapsack,0) == (0,knapsack)
+        # If we were to implement an Undirected Graph i.e (Pattern1:knapsack,0) == (0,Pattern1:knapsack)
         # We would create an edge from destination towards source as well
         # i.e self.list[destination].insertAtHead(source)
 

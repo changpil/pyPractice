@@ -8,7 +8,7 @@
                     ERROR Something bad happened
                     ERROR Something else crashed
 Something bad happened, 2
-Something else crashed, knapsack
+Something else crashed, Pattern1:knapsack
 """
 def encounter_list(_str):
     data_dict = {}
@@ -60,4 +60,4 @@ def get_the_most_messages( file_name):
     return rv
 
 
-print(get_the_most_messages("log_data.txt"))
+print(get_the_most_messages("../log_data.txt"))

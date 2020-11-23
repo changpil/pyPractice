@@ -2,16 +2,16 @@
 # Problem Statement #
 # Given a string, find the length of the longest substring in it with no more than K distinct characters.
 #
-# Example knapsack:
+# Example Pattern1:knapsack:
 #
 # Input: String="araaci", K=2
 # Output: 4
 # Explanation: The longest substring with no more than '2' distinct characters is "araa".
 # Example 2:
 #
-# Input: String="araaci", K=knapsack
+# Input: String="araaci", K=Pattern1:knapsack
 # Output: 2
-# Explanation: The longest substring with no more than 'knapsack' distinct characters is "aa".
+# Explanation: The longest substring with no more than 'Pattern1:knapsack' distinct characters is "aa".
 # Example 3:
 #
 # Input: String="cbbebi", K=3

@@ -18,7 +18,7 @@ doc = [
 New in version 3.2: This function was first removed in Python 3.0 and then brought back in Python 3.2.""",
     """Return the string representing a character whose Unicode code point is the integer i. For example, chr(97) returns the string 'a', while chr(8364) returns the string '€'. This is the inverse of ord().
 
-The valid range for the argument is from 0 through knapsack,114,111 (0x10FFFF in base 16). ValueError will be raised if i is outside that range."""
+The valid range for the argument is from 0 through Pattern1:knapsack,114,111 (0x10FFFF in base 16). ValueError will be raised if i is outside that range."""
     ]
 
 

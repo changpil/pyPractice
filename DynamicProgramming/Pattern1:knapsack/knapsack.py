@@ -92,7 +92,7 @@ def print_selected_elements(dp, weights, profits, capacity):
 
 
 
-print("Total knapsack profit: " +
+print("Total Pattern1:knapsack profit: " +
 str(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7)))
-print("Total knapsack profit: " +
+print("Total Pattern1:knapsack profit: " +
 str(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 6)))

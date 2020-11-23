@@ -1,13 +1,13 @@
 """
 look-and-say sequence:
-knapsack, 11, 21, 1211,111221,312211,13112221, 1113213211, ....
+Pattern1:knapsack, 11, 21, 1211,111221,312211,13112221, 1113213211, ....
 
 Write a function that takes as input an integer n and return the nth integer in the look-and-say sequence
 """
 
 def look_and_say_sequence(k):
 
-    sequence = "knapsack"
+    sequence = "Pattern1:knapsack"
 
     for _ in range(k):
         new_sequence = ""

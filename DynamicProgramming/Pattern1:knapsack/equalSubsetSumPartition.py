@@ -1,7 +1,7 @@
 # Given a set of positive numbers, find if we can partition it into two subsets such that the sum of elements in both the subsets is equal.
-# Input: {knapsack, 2, 3, 4}
+# Input: {Pattern1:knapsack, 2, 3, 4}
 # Output: True
-# Explanation: The given set can be partitioned into two subsets with equal sum: {knapsack, 4} & {2, 3}
+# Explanation: The given set can be partitioned into two subsets with equal sum: {Pattern1:knapsack, 4} & {2, 3}
 
 def twoEqualSets(nums):
     a1, a2  = [], []
@@ -63,7 +63,7 @@ def can_partition(num):
   if s % 2 != 0:
     return False
 
-  # initialize the 'dp' array, -knapsack for default, knapsack for true and 0 for false
+  # initialize the 'dp' array, -Pattern1:knapsack for default, Pattern1:knapsack for true and 0 for false
   dp = [[-1 for x in range(int(s/2)+1)] for y in range(len(num))]
   return True if can_partition_recursive(dp, num, int(s / 2), 0) == 1 else False
 

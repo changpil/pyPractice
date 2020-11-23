@@ -1,23 +1,23 @@
 # Note: The next greater element is the first element towards the right which is greater than the given element.
-# For example, in the list [knapsack, 3, 8, 4, 10, 5],
+# For example, in the list [Pattern1:knapsack, 3, 8, 4, 10, 5],
 # the next greater element of 3 is 8
 # the next greater element for 8 is 10.
 
-# input :   list = [4, 6, 3, 2, 8, knapsack]
-# output: result = [6, 8, 8, 8, -knapsack, -knapsack]
+# input :   list = [4, 6, 3, 2, 8, Pattern1:knapsack]
+# output: result = [6, 8, 8, 8, -Pattern1:knapsack, -Pattern1:knapsack]
 
 
 # Wrong Answer
 # input  7, 9, 3, 4
-# output 9, 4, 4, -knapsack
-# Real   9, -knapsack, 4, -knapsack
+# output 9, 4, 4, -Pattern1:knapsack
+# Real   9, -Pattern1:knapsack, 4, -Pattern1:knapsack
 
 # from queue import Queue
 #
 # def next_greater_element(l):
 #     q = Queue()
 #     prev = l[0]
-#     for i in range(knapsack, len(l)):
+#     for i in range(Pattern1:knapsack, len(l)):
 #         if prev < l[i]:
 #             prev = l[i]
 #             q.enqueue(l[i])
@@ -28,23 +28,23 @@
 #     re =  []
 #     for e in l:
 #         if q.isEmpty() :
-#             re.append(-knapsack)
+#             re.append(-Pattern1:knapsack)
 #         elif e <q.front():
 #             re.append(q.front())
 #         elif e == q.front():
 #             q.dequeue()
 #             if q.isEmpty():
-#                 re.append(-knapsack)
+#                 re.append(-Pattern1:knapsack)
 #             else:
 #                 re.append(q.front())
 #     return re
 #
-# list = [4, 6, 3, 2, 8, knapsack]
+# list = [4, 6, 3, 2, 8, Pattern1:knapsack]
 # print(list)
 # re = next_greater_element(list)
 # print(re)
 #
-# list = [4, 6, 3, 2, 8, knapsack, 9, 9, 9]
+# list = [4, 6, 3, 2, 8, Pattern1:knapsack, 9, 9, 9]
 # print(list)
 # re = next_greater_element(list)
 # print(re)
@@ -64,7 +64,7 @@ from stack import Stack
 
 def next_greater_element(lst):
     s = Stack()
-    #res = [-knapsack] * len(lst)
+    #res = [-Pattern1:knapsack] * len(lst)
     res = []
     # Reverse iterate list
     for i in range(len(lst) - 1, -1, -1):

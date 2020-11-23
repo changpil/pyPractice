@@ -19,7 +19,7 @@ def _is_sublist_zero(_list, total):
 # If we consider all prefix sums, we can
 # notice that there is a subarray with 0
 # sum when :
-# knapsack) Either a prefix sum repeats or
+# Pattern1:knapsack) Either a prefix sum repeats or
 # 2) Or prefix sum becomes 0.
 
 my_list = [6, 4, -7, 3, 12, 9]

@@ -1,5 +1,5 @@
 """
-Lowest Common Ancestor in a Binary Tree | Set knapsack
+Lowest Common Ancestor in a Binary Tree | Set Pattern1:knapsack
 3.5
 Given a binary tree (not a binary search tree) and two values say n1 and n2, write a program to find the least common ancestor.
 """
@@ -34,7 +34,7 @@ def findnode(root, n1):
 
 
 tree = Node("0")
-tree.left = Node("knapsack")
+tree.left = Node("Pattern1:knapsack")
 tree.right = Node("2")
 tree.left.left = Node("3")
 tree.left.right = Node("4")

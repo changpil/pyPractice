@@ -26,7 +26,7 @@ print(a)
 print(subset(a, 5))
 
 """
-Use O(knapsack) additioal storage
+Use O(Pattern1:knapsack) additioal storage
 use as few calls to trh random
 """
 def subset_upgraded(_list, k):

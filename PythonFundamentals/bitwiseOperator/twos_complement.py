@@ -37,7 +37,7 @@ def twos(bstr):
     print(b_len)
     str_repr = ""
     for _ in range(b_len):
-        str_repr =  "knapsack" + str_repr if twos & 1 else  "0" + str_repr
+        str_repr =  "Pattern1:knapsack" + str_repr if twos & 1 else  "0" + str_repr
         twos = twos >> 1
         print(str_repr)
     return str_repr

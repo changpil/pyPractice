@@ -4,12 +4,12 @@
 
 """
 pow(x, n)
-    res = knapsack
+    res = Pattern1:knapsack
     while n > 0:
-        if n & knapsack:
+        if n & Pattern1:knapsack:
             res = res * x
         x = x * x
-        n >>= knapsack
+        n >>= Pattern1:knapsack
     return res
     
 """
@@ -49,9 +49,9 @@ def power3(base, expo):
 """
 
 def power4(a, b):
-    _list=[0]*(b+knapsack)
-    _list[0] = knapsack
-    _list[knapsack] = a
+    _list=[0]*(b+Pattern1:knapsack)
+    _list[0] = Pattern1:knapsack
+    _list[Pattern1:knapsack] = a
     _list[2] = a*a
     return _power(a,b,_list)
 
@@ -78,8 +78,8 @@ def _power(a,b, _list):
 print(power(2,11))
 
 print(power(2,6))
-[knapsack, 2, 4, 8, 0, 0, 0]
-[knapsack, 2, 4, 8, 8, 0, 64, 0]
+[Pattern1:knapsack, 2, 4, 8, 0, 0, 0]
+[Pattern1:knapsack, 2, 4, 8, 8, 0, 64, 0]
 64
 """
 def power4(a, b):
@@ -112,3 +112,37 @@ def _power(a,b, _list):
 print(power4(2,6))
 
 print(power3(3, 5))
+
+
+print("#"*100)
+
+def power(n, k):
+	if k == 0:
+		return 1
+	if k == 1:
+		return n
+	if k == -1:
+		return 1/n
+	if k == 2:
+		return n*n
+
+
+	#Infinite lopp
+	# power(power(n, k//2),2)
+	if k % 2 == 0:
+		#return power(n, k // 2)*power(n,k//2)
+		#return power(n, k//2)**2
+		return power(power(n, k//2),2)
+	#return n*power(n,k//2)*power(n,k//2)
+	#return n*power(n,k//2)**2
+	return n*power(power(n, k//2),2)
+
+print(power(2, 2))
+print(power(2, 3))
+print(power(2, 4))
+print(power(2, 5))
+
+print(power(2, 6))
+print(power(2, 7))
+print(power(2, 8))
+print(power(2, 9))

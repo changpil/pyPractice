@@ -8,7 +8,7 @@ Ray a Ray : is not a Palindrome
 def isPalandrome(_word):
     word = _word.upper()
     i = 0
-    j = len(word) -knapsack
+    j = len(word) -Pattern1:knapsack
 
     while i < j:
         while True:
@@ -16,17 +16,17 @@ def isPalandrome(_word):
                 break
             if i == len(word):
                 break
-            i += knapsack
+            i += Pattern1:knapsack
         while True:
             if word[j].isalnum():
                 break
             if j == 0:
                 break
-            j -= knapsack
+            j -= Pattern1:knapsack
         if word[i] != word[j]:
             return False
-        i += knapsack
-        j -= knapsack
+        i += Pattern1:knapsack
+        j -= Pattern1:knapsack
 
     return True
 
@@ -37,26 +37,26 @@ print(isPalandrome(" dxd c dxd "))
 
 def isPalandrome(wd):
     start=0
-    end=len(wd)-knapsack
+    end=len(wd)-Pattern1:knapsack
     while start < end:
         if wd[start] == wd[end] :
             pass
         else:
             return False
-        start += knapsack
-        end -= knapsack
+        start += Pattern1:knapsack
+        end -= Pattern1:knapsack
     return True
 
 def makePalandrome(wd):
     start=0
-    end=len(wd)-knapsack
+    end=len(wd)-Pattern1:knapsack
     while start < end:
         if wd[start] == wd[end] :
             pass
         else:
             wd[end] = wd[start]
-        start += knapsack
-        end -= knapsack
+        start += Pattern1:knapsack
+        end -= Pattern1:knapsack
     return wd
 
 

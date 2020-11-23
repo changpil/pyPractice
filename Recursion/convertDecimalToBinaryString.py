@@ -2,13 +2,13 @@
 
 def convertDecimalToBinary(d):
     if d == 1:
-        return "knapsack"
+        return "Pattern1:knapsack"
     if d == 0:
          return "0"
     if d == 1:
-        return "knapsack"
+        return "Pattern1:knapsack"
     if d == -1:
-         return "-knapsack"
+         return "-Pattern1:knapsack"
 
     negative = False
     if d < 0:

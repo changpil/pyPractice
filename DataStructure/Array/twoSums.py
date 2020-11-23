@@ -6,8 +6,8 @@ You may assume that each input would have exactly one solution, and you may not 
 Example:
 Given nums = [2, 7, 11, 15], target = 9,
 
-Because nums[0] + nums[knapsack] = 2 + 7 = 9,
-return [0, knapsack].
+Because nums[0] + nums[Pattern1:knapsack] = 2 + 7 = 9,
+return [0, Pattern1:knapsack].
 
 """
 

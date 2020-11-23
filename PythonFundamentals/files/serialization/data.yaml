@@ -13,6 +13,6 @@ xmas-fifth-day:
   french-hens: 3
   golden-rings: 5
   partridges:
-    count: knapsack
+    count: Pattern1:knapsack
     location: a pear tree
   turtle-doves: two

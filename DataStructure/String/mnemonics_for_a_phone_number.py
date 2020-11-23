@@ -1,13 +1,13 @@
 """
 "get 7 digit telephone number and print all possible words"
 
-data={"knapsack":"knapsack","2":["A","B", "C"],"3":["D","E","F"], "4":["G","H","I"],"5":["J","K","L"],"6":["M","N","O"],"7":["P","Q","R"], "8":["T","U","V"], "9":["W","X","Y"],"0":"0" }
+data={"Pattern1:knapsack":"Pattern1:knapsack","2":["A","B", "C"],"3":["D","E","F"], "4":["G","H","I"],"5":["J","K","L"],"6":["M","N","O"],"7":["P","Q","R"], "8":["T","U","V"], "9":["W","X","Y"],"0":"0" }
 
 """
 
 
 
-data={"knapsack":"knapsack",
+data={"Pattern1:knapsack":"Pattern1:knapsack",
       "2":["A","B", "C"],
       "3":["D","E","F"],
       "4":["G","H","I"],
@@ -37,7 +37,7 @@ def get_all_words(phone_number, result=None):
     return result[len(phone_number)-1]
 print(get_all_words("1234"))
 
-memonics={1:"knapsack",
+memonics={1:"Pattern1:knapsack",
         2:["A","B", "C"],
         3:["D","E","F"],
         4:["G","H","I"],

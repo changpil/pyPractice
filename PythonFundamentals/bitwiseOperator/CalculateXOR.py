@@ -1,4 +1,4 @@
-#Calculate XOR from knapsack to n.
+#Calculate XOR from Pattern1:knapsack to n.
 
 
 def xor(n):
