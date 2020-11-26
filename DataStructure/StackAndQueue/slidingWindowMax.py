@@ -1,5 +1,5 @@
 """
-Sliding Window Maximum (Maximum of all subarrays of size k)
+Pattern1: SlidingWindow Maximum (Maximum of all subarrays of size k)
 3.5
 Given an array and an integer k, find the maximum for each and every contiguous subarray of size k.
 
