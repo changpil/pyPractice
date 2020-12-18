@@ -1,6 +1,6 @@
 import sys
 sys.path.append("")
-from graph_implementation_options.array_linkedlist_graph import Graph
+from Graph.array_linkedlist_graph import Graph
 from lib.myStack import MyStack
 # Since we run a DFS on each node, the time complexity is O(V(V + E))
 # def find_mother_vertex(g):

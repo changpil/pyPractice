@@ -1,63 +1,64 @@
-import sys
-sys.path.append("")
-from graph_implementation_options.array_linkedlist_graph import Graph
-from lib.myQueue import MyQueue
+from collections import deque
+
 
 # Since this algorithm traverses the whole graph once, its time complexity is O(V + E).
+class Graph:
+    def __init__(self, vertices, edges, directed=True):
+        self.graph = dict()
+        self.directed = directed
+        for v in vertices:
+            self.graph[v] = set()
 
-def traverse(g, q, visited):
-    result = ""
-    while not q.is_empty():
-        edges = q.dequeue()
-        if edges[0] in visited:
-            continue
-        result += "{}".format(edges[0])
-        visited.add(edges[0])
-        cur = edges[1].get_head()
-        while cur:
-            q.enqueue((cur.data, g.array[cur.data]))
-            cur = cur.next_element
-    return result
-# def bfs_traversal(g, source):
-#     result = ""
-#     q = MyQueue()
-#     visited = set()
-#     q.enqueue((source,g.array[source]))
-#     result += traverse(g, q, visited)
-#
-#     # Search for vertices which is not reachable from source
-#     for i in range(g.vertices):
-#         if i not in visited :
-#             q.enqueue((i,g.array[i]))
-#             result += traverse(g, q, visited)
-#     return result
+        for s, d in edges:
+            self.graph[s].add(d)
+            if not directed:
+                self.graph[d].add(s)
 
-def bfs_traversal(g, source):
-    result = ""
-    q = MyQueue()
+    def __str__(self):
+        s = ""
+        for vertex in self.graph:
+            s += f"{vertex} : "
+            for neighbor in self.graph[vertex]:
+                s += f"{neighbor} "
+            s += "\n"
+        return s
+
+
+def bfs(g):
     visited = set()
-    order = [source] +[i for i in range(0,source)] + [i for i in range(source+1, len(g.array))]
-    print(order)
-    for i in order:
-        if i not in visited :
-            q.enqueue((i,g.array[i]))
-            result += traverse(g, q, visited)
-    return result
-
-g= Graph(6)
-g.add_edge(3,4)
-g.add_edge(4,2)
-g.add_edge(2,1)
-g.add_edge(4,0)
-g.add_edge(4,3)
-g.print_graph()
-print(bfs_traversal(g, 4))
+    for v in g.graph:
+        if v not in visited:
+            visited.add(v)
+            _bfs(g, v, visited)
 
 
-g = Graph(5)
-g.add_edge(0, 1)
-g.add_edge(0, 2)
-g.add_edge(1, 3)
-g.add_edge(2, 3)
-g.print_graph()
-print(bfs_traversal(g, 0))
+
+def _bfs(g, v, visited):
+    queue = deque()
+    queue.append(v)
+    visited.add(v)
+    while queue:
+        node = queue.popleft()
+        visited.add(node)
+        print(node, "-->", end="")
+        for v in g.graph[node]:
+            if v not in visited:
+                visited.add(v)
+                queue.append(v)
+    print()
+
+
+
+v = [0, 1, 2, 3, 4, 5]
+edges = [[3, 4], [4, 2], [2, 1], [4, 0], [4, 3]]
+
+g = Graph(v, edges, directed=False)
+print(g)
+bfs(g)
+
+
+v = [0, 1, 2, 3, 4, 5]
+edges = [[0, 1], [0, 2], [1, 3], [2, 3], [4, 3]]
+g = Graph(v, edges)
+print(g)
+bfs(g)

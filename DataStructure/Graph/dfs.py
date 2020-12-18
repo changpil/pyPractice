@@ -1,62 +1,62 @@
-import sys
-sys.path.append("")
-from graph_implementation_options.array_linkedlist_graph import Graph
-from lib.myStack import MyStack
-
 
 # Since this algorithm traverses the whole graph once, its time complexity is O(V + E).
-def traverse(g, s, visited):
-    result = ""
-    while not s.is_empty():
-        edges = s.pop()
-        if edges[0] in visited:
-            continue
-        result += "{}".format(edges[0])
-        visited.add(edges[0])
-        cur = edges[1].get_head()
-        while cur:
-            s.push((cur.data, g.array[cur.data]))
-            cur = cur.next_element
-    return result
+class Graph:
+    def __init__(self, vertices, edges, directed=True):
+        self.graph = dict()
+        self.directed = directed
+        for v in vertices:
+            self.graph[v] = set()
 
-# def dfs_traversal(g, source):
-#     result = ""
-#     s = MyStack()
-#     visited = set()
-#     s.push((source, g.array[source]))
-#     result += traverse(g, s, visited)
-#
-#     for i in range(g.vertices):
-#         if i not in visited:
-#             s.push((i, g.array[i]))
-#             result += traverse(g, s, visited)
-#     return result
+        for s, d in edges:
+            self.graph[s].add(d)
+            if not directed:
+                self.graph[d].add(s)
 
-def dfs_traversal(g, source):
-    result = ""
-    s = MyStack()
+    def __str__(self):
+        s = ""
+        for vertex in self.graph:
+            s += f"{vertex} : "
+            for neighbor in self.graph[vertex]:
+                s += f"{neighbor} "
+            s += "\n"
+        return s
+
+
+def dfs(g):
     visited = set()
+    for v in g.graph:
+        if v not in visited:
+            visited.add(v)
+            _dfs(g, v, visited)
 
-    order = [source] + [i for i in range(0, source)] + [i for i in range(source + 1, len(g.array))]
-    for i in order:
-        if i not in visited:
-            s.push((i, g.array[i]))
-            result += traverse(g, s, visited)
-    return result
 
-g= Graph(5)
-g.add_edge(3,4)
-g.add_edge(4,2)
-g.add_edge(2,1)
-g.add_edge(0,3)
-g.print_graph()
-print(dfs_traversal(g, 3))
 
-g = Graph(7)
-g.add_edge(1, 2)
-g.add_edge(1, 3)
-g.add_edge(2, 4)
-g.add_edge(2, 5)
-g.add_edge(3, 6)
-g.print_graph()
-print(dfs_traversal(g, 1))
+def _dfs(g, v, visited):
+    stack = list()
+    stack.append(v)
+    visited.add(v)
+    while stack:
+        node = stack.pop()
+        visited.add(node)
+        print(node, "-->", end="")
+        for v in g.graph[node]:
+            if v not in visited:
+                visited.add(v)
+                stack.append(v)
+    print()
+
+
+
+v = [0, 1, 2, 3, 4, 5]
+edges = [[3, 4], [4, 2], [2, 1], [4, 0], [4, 3]]
+
+g = Graph(v, edges, directed=False)
+print(g)
+dfs(g)
+
+
+v = [0, 1, 2, 3, 4, 5]
+edges = [[0, 1], [0, 2], [1, 3], [2, 3], [4, 3]]
+g = Graph(v, edges)
+print(g)
+dfs(g)

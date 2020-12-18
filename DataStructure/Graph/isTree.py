@@ -6,9 +6,9 @@ If we do well on mother of vertex.
 
 import sys
 sys.path.append("")
-from graph_implementation_options.array_linkedlist_graph import Graph
+from Graph.array_linkedlist_graph import Graph
 from lib.myStack import MyStack
-from detect_cyclic import *
+from bfs_undirected_graph_cyclic_detection import *
 from motherVertex import *
 
 

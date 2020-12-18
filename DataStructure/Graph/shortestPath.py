@@ -1,6 +1,6 @@
 import sys
 sys.path.append("")
-from graph_implementation_options.array_linkedlist_graph import Graph
+from Graph.array_linkedlist_graph import Graph
 from lib.myQueue import MyQueue
 
 # O(v^E) Recursive solution
