@@ -81,6 +81,10 @@ class Cache:
         self.cache = {}
 
     def put(self, key, val):
+        if key in self.cache:
+            sentinel = self.head
+            next = sentinel.next
+
         # Cache capacity is full, remove RLU cache
         if self.capacity == len(self.cache):
             # remove tail of node

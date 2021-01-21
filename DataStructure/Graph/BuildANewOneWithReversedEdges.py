@@ -10,26 +10,27 @@ class Node:
 
 def build_other_graph(node):
     visited = set()
-    reverse_node = None
-    reverseNodes = {}
-    for v in node.neighbours:
-        if v.val not in visited:
-            reverse_node = dfs(v, visited, reverseNodes)
-    return reverse_node
+    reversenodes = {}
+    re = dfs(node, visited, reversenodes)
+    return re
 
-def dfs(v, visited, reverseNodes):
+def dfs(node, visited, reversenodes):
+    newNode = None
+    if node.val not in  visited:
+        visited.add(node.val)
+        newNode = Node()
+        newNode.val = node.val
+        reversenodes[node.val] = newNode
 
-    node = Node()
-    node.val = v.val
-    reverseNodes[node.val] = node
-    visited.add(v.val)
+    for n in node.neighbors:
+        if n.val not in visited:
+            nNode = Node()
+            nNode.val = n.val
+            reversenodes[n.val] = nNode
+            nNode.neighbors.append(newNode)
 
-    for neb in v.neighbours:
-        if neb.val not in visited:
-            revneb = dfs(neb, visited, reverseNodes)
-            revneb.neighbours.append(node)
-        else:
-            reverseNodes[neb.val].neighbours.append(node)
-    return node
+
+
+
 
 

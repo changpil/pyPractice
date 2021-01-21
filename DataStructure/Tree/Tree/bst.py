@@ -248,17 +248,17 @@ class BST:
                 [a + u * ' ' + b for a, b in zipped_lines]
         return lines, n + m + u, max(p, q) + 2, n + u // 2
 
-# bst = BST()
-# bst.add(50)
-# bst.add(25)
-# bst.add(75)
-# bst.add(Pattern1:knapsack)
-# bst.add(30)
-# bst.add(60)
-# bst.add(90)
-# bst.add(100)
-# bst.add(200)
-# print(bst)
+bst = BST()
+bst.add(50)
+bst.add(25)
+bst.add(75)
+#bst.add(Pattern1:knapsack)
+bst.add(30)
+bst.add(60)
+bst.add(90)
+bst.add(100)
+bst.add(200)
+print(bst)
 
 # bst.delete(200)
 # print(bst)
