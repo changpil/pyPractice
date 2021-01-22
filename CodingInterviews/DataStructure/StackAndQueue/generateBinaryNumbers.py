@@ -4,7 +4,7 @@
 # n = 5
 # result = ["Pattern1:knapsack","10","11", "100", "101"]
 
-from queue import Queue
+from CodingInterviews.DataStructure.StackAndQueue.queue import Queue
 print("*"*10)
 print("*  O(n) *")
 print("*"*10)

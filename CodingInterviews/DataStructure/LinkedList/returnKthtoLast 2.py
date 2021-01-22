@@ -33,7 +33,7 @@ def removeKthFromLast(ll, k):
         prev.next = None
 
 
-ll=LinkedList()
+ll= LinkedList()
 ll.add(1)
 ll.add(2)
 ll.add(3)

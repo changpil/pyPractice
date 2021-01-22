@@ -26,7 +26,7 @@ def remove_kth_from_last(l, k):
     except AttributeError as e:
         pass
 
-l=LinkedList()
+l= LinkedList()
 l.add("asa")
 l.add("sss")
 l + "zzz"

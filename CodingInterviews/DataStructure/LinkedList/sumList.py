@@ -25,7 +25,7 @@ def sumList(l,k):
     c= int(a) + int(b)
 
     print("result {}".format(str(c)))
-    n=LinkedList()
+    n= LinkedList()
     z=str(c)[::-1]
     print(z)
     for p in z:
@@ -34,14 +34,14 @@ def sumList(l,k):
 
 
 
-l=LinkedList()
+l= LinkedList()
 #l.add("7")
 #l.add("Pattern1:knapsack")
 #l.add("6")
 
 print(l)
 
-k=LinkedList()
+k= LinkedList()
 k.add("5")
 k.add("9")
 k.add("2")

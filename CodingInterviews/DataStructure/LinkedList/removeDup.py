@@ -26,7 +26,7 @@ def remove_dup(l):
                 target=target.next      #####
         i = i.next #(missed)
 
-l=LinkedList()
+l= LinkedList()
 l.add("a")
 l.add("a")
 l.add("a")

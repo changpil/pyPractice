@@ -24,7 +24,7 @@ def partition(l, key):
     return n
 
 
-l=LinkedList()
+l= LinkedList()
 l.add("Pattern1:knapsack")
 l.add("2")
 l.add("10")
