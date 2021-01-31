@@ -32,7 +32,7 @@ no time complexity requirement or concerns
 '''
 
 
-# [1,2]
+# DFS
 def getPermutation(l, i, s, tmp, store):
     if i >= len(l):
         store.append(tmp.copy())
@@ -45,9 +45,22 @@ def getPermutation(l, i, s, tmp, store):
             getPermutation(l, i + 1, s, tmp, store)
             tmp.pop()
             s.discard(n)
+#BFS
+def perm(input, i):
+    if i >= len(input):
+        return [[]]
+
+    pre = perm(input, i+1)
+    result = []
+    for l in pre:
+        for j in range(len(l)+1):
+            tmp = l[:j] + [input[i]] + l[j:]
+            result.append(tmp)
+    return result
 
 
 # ["1", "2"]
+# Formal way
 def operation(l, i, tmp, store):
     if i >= len(l):
         store.append("".join(tmp))
@@ -70,7 +83,8 @@ def foo(input):
     ll = []
     tmp = []
 
-    getPermutation(input, 0, s, tmp, ll)
+    #getPermutation(input, 0, s, tmp, ll)
+    ll = perm(input, 0)
     for l in ll:
         strl = list(map(lambda x: str(x), l))
         tmps = []
