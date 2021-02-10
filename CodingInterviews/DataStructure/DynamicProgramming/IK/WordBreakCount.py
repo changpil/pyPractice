@@ -26,22 +26,39 @@
 #     return DP[-1]
 
 
-def wordBreakCount(dictionary, txt):
-    DP = [0]*(len(txt)+1)
-    DP[0] = 1
-    dset = set(dictionary)
-    for i in range(1, len(DP) +1):
-        for j in range(i + 1, len(DP)+1):
-            if txt[i-1:j-1] in dset and DP[i-1] != 0:
-                #print(f"{i -1}:{j -1} {txt[i - 1:j - 1]}" )
-                DP[j-1] += DP[i-1]
-                #print(DP)
-    return DP[-1]
+# def wordBreakCount(dictionary, txt):
+#     DP = [0]*(len(txt)+1)
+#     DP[0] = 1
+#     dset = set(dictionary)
+#     for i in range(1, len(DP) +1):
+#         for j in range(i + 1, len(DP)+1):
+#             if txt[i-1:j-1] in dset and DP[i-1] != 0:
+#                 #print(f"{i -1}:{j -1} {txt[i - 1:j - 1]}" )
+#                 DP[j-1] += DP[i-1]
+#                 #print(DP)
+#     return DP[-1]
 
 
 #dictionary = ['ki','ck','kick','start','kickstart']
 #print(wordBreakCount(dictionary, "kickstart"))
 
+# # Answer 16
+# dictionary = ['a','aa','aaa','aaaa','aaaaa','aaaaa']
+# print(wordBreakCount(dictionary, "aaaaa"))
+
+
+def wordBreakCount(dictionary, txt):
+    DP = [0] * (len(txt) + 1)
+    DP[0] = 0
+    dset = set(dictionary)
+
+    for i in range(1, len(DP)):
+        if txt[0: i] in dset:
+            DP[i] += 1
+        for start in range(1, i):
+            if txt[start:i] in dset:
+                DP[i] += DP[start]
+    return DP[-1]
 # Answer 16
 dictionary = ['a','aa','aaa','aaaa','aaaaa','aaaaa']
 print(wordBreakCount(dictionary, "aaaaa"))

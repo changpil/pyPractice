@@ -1,61 +1,39 @@
-#
-# accounts = [["John", "johnsmith@mail.com", "john00@mail.com"], ["John", "johnnybravo@mail.com"], ["John", "johnsmith@mail.com", "john_newyork@mail.com"], ["Mary", "mary@mail.com"]]
-# for e in accounts[0]:
-#     for email in e[1:]:
-#         print(email)
-#
-# #print(accounts)
-# for e in accounts[0]:
-#     print(e)
+def numPhoneNumbers(startdigit, phonenumberlength):
+    map = {0: [4, 6], 1: [6, 8], 2: [7, 9], 3: [4, 8], 4: [3, 9, 0], 5: [], 6: [1, 7, 9], 7: [2, 6], 8: [1, 3],
+           9: [4, 2]}
+    dp = [[] for _ in range(phonenumberlength + 1)]
+    dp[1].append(startdigit)
 
-import collections
-def build_graph(nc, prq):
-    graph = {}
-    for c in range(nc):
-        graph[c] = []
+    for i in range(2, phonenumberlength + 1):
+        #tmp = dp[i-1].copy()
+        for n in dp[i-1]:
+            dp[i].extend(map[n])
+    for a in dp:
+        print(a)
+    return len(dp[-1])
 
-    for a in prq:
-        src, dst = a[1], a[0]
-        graph[src].append(dst)
-    return graph
+#print(numPhoneNumbers(1, 2))
 
-def build_ingress(nc, prq):
-    ingress = {}
-    for c in range(nc):
-        ingress[c] = 0
 
-    for a in prq:
-        src, dst = a[1], a[0]
-        ingress[dst] = ingress[dst] + 1
-    return ingress
+def numberOfWays(arr, k):
+    arr.sort()
+    i, j = 0, len(arr) - 1
+    out = 0
+    while j >= 0:
+        cur = arr[j]
+        target = k - cur
+        i = 0
+        while i < j:
+            if arr[i] == target:
+                out += 1
+            elif arr[i] > target:
+                break
+            i += 1
+        j -= 1
+    return out
 
-def dfs(graph, n, visited, done):
-    visited.add(n)
-    for nb in graph[n]:
-        if nb not in visited:
-            if not dfs(graph, nb, visited, done):
-                return False
-        else:
-            if not done[nb]:
-                return False
-    done[n] = True
-    return True
-
-def canFinish(numCourses, prerequisites):
-    graph = build_graph(numCourses, prerequisites)
-    #ingress = build_ingress(numCourses, prerequisites)
-    #print(graph)
-    visited, done = set(), {}
-    #if all(ingress.values()):
-    #    return False
-
-    for i in range(numCourses):
-        if i not in visited:
-            if not dfs(graph, i, visited, done):
-                return False
-    return True
-# n = 20
-# prq = [[0,10],[3,18],[5,5],[6,11],[11,14],[13,1],[15,1],[17,4]]
-n= 2
-prq = [[0, 1]]
-print(canFinish(n, prq))
+k_1 = 6
+arr_1 = [1, 2, 3, 4, 3]
+expected_1 = 2
+output_1 = numberOfWays(arr_1, k_1)
+print(expected_1, output_1)
