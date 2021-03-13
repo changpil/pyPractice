@@ -51,7 +51,7 @@ class IntList(SimpleList):
 
 class SortedIntList(IntList, SortedList):
     # MRO for SortedIntList
-    # SortedIntList Search for methods name for add in subclass
+    # SortedIntList BinarySearchVariants for methods name for add in subclass
     # IntList  --> super().add will continue to SimpleList to get down to next MRO
     # SimpleList --> super().add
     # Object

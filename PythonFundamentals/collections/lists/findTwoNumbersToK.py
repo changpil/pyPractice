@@ -17,7 +17,7 @@ print(find_sum([-1 ], 0))
 print(find_sum([ ], 0))
 
 print("*"*10)
-print("*  O(nlogn) Binary Search *")
+print("*  O(nlogn) Binary BinarySearchVariants *")
 print("*"*10)
 
 def binary_search(l, k):
