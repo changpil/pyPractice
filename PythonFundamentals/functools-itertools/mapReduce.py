@@ -10,7 +10,7 @@ def combine_counts(d1, d2):
         d1[word] = d1.get(word,0) + count
     return d1
 doc = [
-    "Return a Boolean value, i.e. one of True or False. x is converted using the standard truth testing procedure. If x is false or omitted, this returns False; otherwise it returns True. The bool class is a subclass of int (see Numeric Types — int, float, complex). It cannot be subclassed further. Its only instances are False and True (see Boolean Values).",
+    "Return a Boolean value, i.e. one of True or False. x is converted using the standard truth pytest procedure. If x is false or omitted, this returns False; otherwise it returns True. The bool class is a subclass of int (see Numeric Types — int, float, complex). It cannot be subclassed further. Its only instances are False and True (see Boolean Values).",
     "Raises an auditing event builtins.breakpoint with argument breakpointhook.",
     "The optional source parameter can be used to initialize the array in a few different ways:",
     """Return True if the object argument appears callable, False if not. If this returns True, it is still possible that a call fails, but if it is False, calling object will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a __call__() method.

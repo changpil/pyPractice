@@ -57,7 +57,7 @@ print(ll)
 removeKthFromLast(ll, 1)
 print(ll)
 """
-Without testing I had some errors.
+Without pytest I had some errors.
 removeKthFromLast(ll, 0) : the last element
 removeKthFromLast(ll, 6) : the first element
 """

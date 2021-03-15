@@ -1,39 +1,77 @@
-def numPhoneNumbers(startdigit, phonenumberlength):
-    map = {0: [4, 6], 1: [6, 8], 2: [7, 9], 3: [4, 8], 4: [3, 9, 0], 5: [], 6: [1, 7, 9], 7: [2, 6], 8: [1, 3],
-           9: [4, 2]}
-    dp = [[] for _ in range(phonenumberlength + 1)]
-    dp[1].append(startdigit)
+def getDirections(n, i, j):
+    directions = [(i - 1, j + 2), (i + 1, j + 2), (i + 2, j + 1), (i + 2, j - 1), (i - 1, j - 2), (i + 1, j - 2), (i - 2, j - 1), (i - 2, j + 1)]
+    #d = set()
+    for x, y in directions:
+        if 0 <= x < n and 0 <= y < n :
+            yield (x, y)
+            #d.add((x, y))
+    #return d
 
-    for i in range(2, phonenumberlength + 1):
-        #tmp = dp[i-1].copy()
-        for n in dp[i-1]:
-            dp[i].extend(map[n])
-    for a in dp:
-        print(a)
-    return len(dp[-1])
+def validMove(visited, x, y):
+    if (x,y) in visited:
+        return False
 
-#print(numPhoneNumbers(1, 2))
+    for i, j in visited:
+        if i == x :
+            return False
+        if j == y:
+            return False
+        if abs(i-x) / abs(j-y) == 1.0:
+            return False
+    return True
+
+def find_all_arrangements(n):
+    tmp, store = [], set()
+    visited = set()
+    returnGrid = []
+
+    for i in range(1, 2):
+        foo(n, 0, i, 0, tmp, visited, store)
+        visited.clear()
+        tmp.clear()
+        print(len(store))
+    for da in store:
+        returnGrid.append(stringGrid(n, da))
+
+    return returnGrid
 
 
-def numberOfWays(arr, k):
-    arr.sort()
-    i, j = 0, len(arr) - 1
-    out = 0
-    while j >= 0:
-        cur = arr[j]
-        target = k - cur
-        i = 0
-        while i < j:
-            if arr[i] == target:
-                out += 1
-            elif arr[i] > target:
-                break
-            i += 1
-        j -= 1
-    return out
+def foo(n, i, j, queen, tmp, visited, store):
+    visited.add((i, j))
+    tmp.append((i, j))
+    queen += 1
+    if queen == 4:
+        print(tmp)
+    if queen == n:
+        tmp
+        cp = tmp.copy()
+        cp.sort()
+        store.add(tuple(cp))
+        visited.remove((i, j))
+        tmp.pop()
+        return
+    # visited.add((i, j))
+    # tmp.append((i, j))
+    # queen += 1
+    for x, y in getDirections(n, i, j):
+        if validMove(visited, x, y):
+            foo(n, x, y, queen, tmp, visited, store)
 
-k_1 = 6
-arr_1 = [1, 2, 3, 4, 3]
-expected_1 = 2
-output_1 = numberOfWays(arr_1, k_1)
-print(expected_1, output_1)
+    visited.remove((i, j))
+    tmp.pop()
+
+def stringGrid(n, points):
+    sg = []
+    for i in range(n):
+        line = []
+        for j in range(n):
+            if (i, j) not in points:
+                line.append("-")
+            else:
+                line.append("q")
+        sg.append("".join(line))
+    return sg
+
+#print(find_all_arrangements(4))
+for a in find_all_arrangements(5):
+    print(a)
