@@ -46,8 +46,10 @@ def binary_search_leftmost(nums, target):
 
     return start
 
-k = 2
 arr = [1,2,2,2,3,5,8]
+print(binary_search_leftmost(arr, 2))
+
+arr = [1,2,2,2,2,2,2]
 print(binary_search_leftmost(arr, 2))
 
 # When target is all the way to left

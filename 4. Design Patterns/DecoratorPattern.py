@@ -1,5 +1,8 @@
-class Shape:
-    pass
+import abc
+class Shape(abc.ABC):
+    @abc.abstractmethod
+    def draw(self):
+        pass
 
 class Triangle(Shape):
     def draw(self):
@@ -35,14 +38,12 @@ class PatternDecorator(Decorator):
         self.shape.draw()
         print(self.pattern)
 
-
-
 s = Circle()
 s.draw()
-
+print("*"*100)
 cd = ColorDecorator(s, "red")
 cd.draw()
-
-
+print("*"*100)
 pd = ColorDecorator(Triangle(), "Polca dot")
 pd.draw()
+print("*"*100)

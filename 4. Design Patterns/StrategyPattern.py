@@ -1,7 +1,7 @@
 # Want to dynamically configure algorithm
 
 class File:
-    def __init__(self,):
+    def __init__(self):
         self.strategy = None
 
     def compress(self):

@@ -3,6 +3,13 @@ class CompressionStrategy(abc.ABC):
     @abc.abstractmethod
     def compress(cls):
         pass
+    @classmethod
+    def createZipCompression():
+        return ZipCompression()
+
+    @classmethod
+    def createRarCompression():
+        return ZipCompression()
 
 class ZipCompression(CompressionStrategy):
     def compress(cls):
@@ -18,6 +25,7 @@ class CompressionStrategyFactory(abc.ABC):
         pass
 
 class ZipCompressionStrategyFactory(CompressionStrategyFactory):
+    @classmethod
     def create(cls):
         return ZipCompression()
 

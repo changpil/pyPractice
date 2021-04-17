@@ -1,7 +1,10 @@
-class File:
+import abc
+class File(abc.ABC):
     def __init__(self, txt):
         self.txt = txt
-
+    @abc.abstractmethod
+    def visit(self):
+        pass
 class WordFile(File):
     def __init__(self, txt):
         super().__init__(txt)
@@ -18,8 +21,13 @@ class PictureFile(File):
     def __str__(self):
         return self.txt
 
-class FileVisitor:
-    pass
+class FileVisitor(abc.ABC):
+    @abc.abstractmethod
+    def visitWord(self):
+        pass
+    @abc.abstractmethod
+    def visitPicture(self):
+        pass
 
 class PrintVisitor(FileVisitor):
     def visitWord(self, wordFile):

@@ -31,7 +31,7 @@ def firstMissingPositive(nums):
     for i in range(len(nums)):
         while nums[i] != i + 1:
             d = nums[i] - 1
-            if d < 0 or d >= len(nums) or nums[d] == d + 1:
+            if d < 0 or d > len(nums) or nums[d] == d + 1:
                 break
             else:
                 nums[i], nums[d] = nums[d], nums[i]

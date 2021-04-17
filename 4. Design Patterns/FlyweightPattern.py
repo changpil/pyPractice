@@ -1,114 +1,48 @@
-class ComplexCars(object):
-    """Separate class for Complex Cars"""
-
-    def __init__(self):
-        pass
-
-    def cars(self, car_name):
-        return "ComplexPattern[% s]" % (car_name)
-
-
-class CarFamilies(object):
-    """dictionary to store ids of the car"""
-
-    car_family = {}
-
-    def __new__(cls, name, car_family_id):
-        try:
-            id = cls.car_family[car_family_id]
-        except KeyError:
-            id = object.__new__(cls)
-            cls.car_family[car_family_id] = id
-        return id
-
-    def set_car_info(self, car_info):
-
-        """set the car information"""
-
-        cg = ComplexCars()
-        self.car_info = cg.cars(car_info)
-
-    def get_car_info(self):
-
-        """return the car information"""
-
-        return (self.car_info)
-# if __name__ == '__main__':
-#     car_data = (('a', 1, 'Audi'), ('a', 2, 'Ferrari'), ('b', 1, 'Audi'), ('m', 3, 'Mecedes'))
-#     car_family_objects = []
-#     for i in car_data:
-#         obj = CarFamilies(i[0], i[1])
-#         obj.set_car_info(i[2])
-#         car_family_objects.append(obj)
-#
-#     """similar id's says that they are same objects """
-#
-#
-#     for i, ins in CarFamilies.car_family.items():
-#         print(str(i),  str(id(ins)), ins.get_car_info())
-#
-#     for i in car_family_objects:
-#         print("id = " + str(id(i)))
-#         print(i.get_car_info())
-##########################################################################
-# Another EXAMPLE
-##########################################################################
-
-
-
-
 import abc
-
-
-class FlyweightFactory:
-    """
-    Create and manage flyweight objects.
-    Ensure that flyweights are shared properly. When a client requests a
-    flyweight, the FlyweightFactory object supplies an existing instance
-    or creates one, if none exists.
-    """
-
-    def __init__(self):
-        self._flyweights = {}
-
-    def get_flyweight(self, key):
-        try:
-            flyweight = self._flyweights[key]
-        except KeyError:
-            flyweight = ConcreteFlyweight()
-            self._flyweights[key] = flyweight
-        return flyweight
-
-
-class Flyweight(metaclass=abc.ABCMeta):
-    """
-    Declare an interface through which flyweights can receive and act on
-    extrinsic state.
-    """
-
-    def __init__(self):
-        self.intrinsic_state = None
-
+class Shape(abc.ABC):
     @abc.abstractmethod
-    def operation(self, extrinsic_state):
+    def draw(self):
         pass
 
+class Triangle(Shape):
+    def draw(self):
+        print("Triangle")
 
-class ConcreteFlyweight(Flyweight):
-    """
-    Implement the Flyweight interface and add storage for intrinsic
-    state, if any. A ConcreteFlyweight object must be sharable. Any
-    state it stores must be intrinsic; that is, it must be independent
-    of the ConcreteFlyweight object's context.
-    """
+class Circle(Shape):
+    def __init__(self, color):
+        self.color =  color
+    def setX(self, x):
+        self.x = x
 
-    def operation(self, extrinsic_state):
-        pass
+    def setY(self, y):
+        self.y = y
+
+    def setRadius(self, r):
+        self.radius = r
+
+    def draw(self):
+        print(f"Circle color {self.color} {self.x}:{self.y}")
+
+class ShapeFactory:
+    def __init__(self):
+        self.circleMap = dict()
+
+    def getCircle(self, color):
+        if color not in self.circleMap:
+            self.circleMap[color] = Circle(color)
+            print("Creating circle of color : " + color)
+        return self.circleMap[color]
+
+import random
 def main():
-    flyweight_factory = FlyweightFactory()
-    concrete_flyweight = flyweight_factory.get_flyweight("key")
-    concrete_flyweight.operation(None)
-
+    colors = ["Red", "Green", "Blue", "White", "Black"]
+    circleFactory = ShapeFactory()
+    for i in range(20):
+        circle = circleFactory.getCircle(random.choice(colors))
+        circle.setX(random.randrange(0, 100))
+        circle.setY(random.randrange(0, 100))
+        circle.setRadius(random.randrange(0, 1000))
+        circle.draw()
 
 if __name__ == "__main__":
     main()

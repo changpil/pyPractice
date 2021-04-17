@@ -38,21 +38,31 @@ def snakesAndLadders(board):
     q = collections.deque()
     q.append(1)
     steps = 0
+    visited = set()
     while q:
-        num = q.popleft()
-        oneMove = len(q)
-        steps += 1
-        if num == len(board)*len(board[0]):
-            return steps
-        for _ in range(oneMove):
-            for next_num in getNeighbors(board, num):
+        level = len(q)
+        for _ in range(level):
+            num = q.popleft()
+            if num == len(board)*len(board[0]):
+                return steps
+            for next_num in getNeighbors(board, num, visited):
                 q.append(next_num)
+        steps += 1
+    return -1
 
-def getNeighbors(board, num):
-
-
-    neighbor = []
-
+def getNeighbors(board, num, visited):
+    neighbors = [num+1, num+2, num +3, num+ 4, num+5, num +6]
+    for neighbor in neighbors:
+        i, j = getPoint(board, neighbor)
+        if not (0 <= i < len(board) and 0 <= j < len(board[0])):
+            continue
+        if neighbor in visited:
+            continue
+        visited.add(neighbor)
+        if board[i][j] != -1:
+            yield board[i][j]
+        else:
+            yield neighbor
 
 def getPoint(board, num):
     forward = (len(board) -1) % 2
@@ -64,14 +74,41 @@ def getPoint(board, num):
         col = len(board[0]) -1  - num%(len(board))
     return row, col
 
-board = [
-[-1,-1,-1,-1,-1,-1],
-[-1,-1,-1,-1,-1,-1],
-[-1,-1,-1,-1,-1,-1],
-[-1,35,-1,-1,13,-1],
-[-1,-1,-1,-1,-1,-1],
-[-1,15,-1,-1,-1,-1]]
+# board = [
+# [-1,-1,-1,-1,-1,-1],
+# [-1,-1,-1,-1,-1,-1],
+# [-1,-1,-1,-1,-1,-1],
+# [-1,35,-1,-1,13,-1],
+# [-1,-1,-1,-1,-1,-1],
+# [-1,15,-1,-1,-1,-1]]
 
+# Test numToIndex Convertion
 #board = [[0]*10 for _ in range(10)]
-for i in range(1, 30):
-    print(i, getPoint(board,i))
+# for i in range(1, 30):
+#     print(i, getPoint(board,i))
+
+#print(snakesAndLadders(board))
+
+
+# Infinite Loop
+# board = [[1,1,-1],[1,1,1],[-1,1,1]]
+# print(snakesAndLadders(board))
+
+# Time Limit Exceeded
+board = [[-1,-1,-1,135,-1,-1,-1,-1,-1,185,-1,-1,-1,-1,105,-1],
+         [-1,-1,92,-1,-1,-1,-1,-1,-1,201,-1,118,-1,-1,183,-1],
+         [-1,-1,-1,-1,-1,-1,-1,-1,-1,179,-1,-1,-1,-1,-1,-1],
+         [-1,248,-1,-1,-1,-1,-1,-1,-1,119,-1,-1,-1,-1,-1,192],
+         [-1,-1,104,-1,-1,-1,-1,-1,-1,-1,165,-1,-1,206,104,-1],
+         [145,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,229,-1],
+         [-1,-1,75,140,-1,-1,-1,-1,-1,-1,-1,-1,43,-1,34,-1],
+         [-1,-1,-1,-1,-1,-1,169,-1,-1,-1,-1,-1,-1,188,-1,-1],
+         [-1,-1,-1,-1,-1,-1,92,-1,171,-1,-1,-1,-1,-1,-1,66],
+         [-1,-1,-1,126,-1,-1,68,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+         [-1,109,-1,86,28,228,-1,-1,144,-1,-1,-1,-1,-1,-1,-1],
+         [-1,-1,-1,-1,59,-1,-1,-1,-1,-1,51,-1,-1,-1,62,-1],
+         [-1,71,-1,-1,-1,63,-1,-1,-1,-1,-1,-1,212,-1,-1,-1],
+         [-1,-1,-1,-1,174,-1,59,-1,-1,-1,-1,-1,-1,133,-1,-1],
+         [-1,-1,62,-1,5,-1,16,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+         [-1,-1,-1,59,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]
+print(snakesAndLadders(board))

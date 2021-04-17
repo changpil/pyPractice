@@ -1,32 +1,70 @@
+### First Draft
+
+# class Menu:
+#     def __init__(self, s):
+#         self.menuitem = MenuItem(s)
+#         self.components = list()
+# class MenuItem():
+#     def __init__ (self, s):
+#         self.txt = s
+# def traverse(menu, indent):
+#     print(indent, menu.menuitem.txt)
+#     for decen in menu.components:
+#         traverse(decen, indent + "-")
+
+# mainManu = Menu("file")
+# mainManu.components.append(Menu("open"))
+# mainManu.components.append(Menu("save"))
+# mainManu.components.append(Menu("exit"))
+# mainManu.components[0].components.append(Menu("open local"))
+# mainManu.components[0].components.append(Menu("open box"))
+# mainManu.components[0].components.append(Menu("open istore"))
+# mainManu.components[1].components.append(Menu("save local"))
+# mainManu.components[1].components.append(Menu("save box"))
+# mainManu.components[1].components.append(Menu("save istore"))
+# traverse(mainManu, "")
 
 
-class Manu:
+
+### Second Draft
+import abc
+class IMenu(abc.ABC):
     def __init__(self, s):
-        self.manuitem = ManuItem(s)
+        self.text = s
         self.components = list()
 
+    @abc.abstractmethod
+    def addMenu(self):
+        pass
 
-class ManuItem():
-    def __init__ (self, s):
-        self.txt = s
+class Menu(IMenu):
+    def addMenu(self, text):
+        self.components.append(Menu(text))
 
-def traverse(manu, indent):
-    print(indent, manu.manuitem.txt)
-    for decen in manu.components:
-        traverse(decen, indent + "-")
+    def traverse(self, prefix):
+        self._traverse(self, prefix)
 
-mainManu = Manu("file")
-mainManu.components.append(Manu("open"))
-mainManu.components.append(Manu("save"))
-mainManu.components.append(Manu("exit"))
-
-mainManu.components[0].components.append(Manu("open local"))
-mainManu.components[0].components.append(Manu("open box"))
-mainManu.components[0].components.append(Manu("open istore"))
-
-mainManu.components[1].components.append(Manu("save local"))
-mainManu.components[1].components.append(Manu("save box"))
-mainManu.components[1].components.append(Manu("save istore"))
+    def _traverse(self, ptr, prefix):
+        print(f"{prefix} {ptr.text}")
+        for menu in ptr.components:
+            self._traverse(menu, prefix + prefix)
+    def get(self, text):
+        for menu in self.components:
+            if menu.text == text:
+                return menu
 
 
-traverse(mainManu, "")
+mainMenu = Menu("file")
+mainMenu.addMenu("open")
+mainMenu.addMenu("save")
+mainMenu.addMenu("exit")
+
+mainMenu.get("open").addMenu("open local")
+mainMenu.get("open").addMenu("open box")
+mainMenu.get("open").addMenu("open istore")
+
+mainMenu.get("save").addMenu("save local")
+mainMenu.get("save").addMenu("save box")
+mainMenu.get("save").addMenu("save istore")
+
+mainMenu.traverse(" - ")

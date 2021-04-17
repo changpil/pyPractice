@@ -20,7 +20,7 @@ while start <= end:
 ##### 374. Guess Number High or Lower (easy)   
 ##### 278.First Bad Version (easy)   
 ##### 35. Search Insert Position (easy)
-##### 744. Find Smallest Letter Greater Than Target (easy)
+##### 744. Find the Smallest Letter Greater Than Target (easy)
 ##### 34. Find First Last Position of Element in Sorted Array (Medium)
 ##### 1150. Check if a Number is Majority Element in a Sorted Array (easy)
 ##### 74. Search a 2D Matrix (medium)
@@ -28,7 +28,7 @@ while start <= end:
 ##### 1064. Fixed Point (easy)
 ##### 540. Single Element in a Sorted Array ( medium)
 ##### 1228. Missing Number in arithmetic Progression (easy)
-##### 1060. Missing Element in Sorted Arary (medium)
+##### 1060. Missing Element in Sorted Array (medium)
 
 ### Session 2
 ##### 941. Valid Mountain Array (easy)

@@ -37,10 +37,8 @@ phone.move(333.0, 144.2)
 class Sub:
     def __init__(self, name):
         self.name = name
-
     def update(self, message):
         print(f"Notification for {self.name} : {message}")
-
 
 class Pub:
     def __init__(self):

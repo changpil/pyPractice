@@ -36,23 +36,24 @@ def findDuplicate(nums):
             else:
                 nums[d], nums[i] = nums[i], nums[d]
     result = []
+    print(nums)
     for i in range(len(nums)):
         if nums[i] != i + 1:
             result.append(nums[i])
     return result
 
-nums = [1,3,4,2,2]
-print(findDuplicate(nums))
-
-nums = [1,3,3,2,2]
-print(findDuplicate(nums))
-
-
-nums = [1,1,3,3,2,2]
-print(findDuplicate(nums))
-
-nums = [4, 5, 1,1,3,3,2,2]
-print(findDuplicate(nums))
+# nums = [1,3,4,2,2]
+# print(findDuplicate(nums))
+#
+# nums = [1,3,3,2,2]
+# print(findDuplicate(nums))
+#
+#
+# nums = [1,1,3,3,2,2]
+# print(findDuplicate(nums))
+#
+# nums = [4, 5, 1,1,3,3,2,2]
+# print(findDuplicate(nums))
 
 #out Of index
 # nums = [4, 5, 1,1,3,3,2, 2, 2, 4,12]

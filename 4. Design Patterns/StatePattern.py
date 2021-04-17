@@ -4,10 +4,8 @@
 class Phone:
     def __init__(self):
         self.ring_state = SoundState()
-
     def volumeUp(self):
         self.ring_state = self.ring_state.nextVolumeUp()
-
     def volumeDown(self):
         self.ring_state = self.ring_state.nextVolumeDown()
     def ring(self):
@@ -38,7 +36,7 @@ class VibrateState(RingState):
     def ring(self):
         print("Phone is vibrating")
     def nextVolumeUp(self):
-        return  SoundState()
+        return SoundState()
     def nextVolumeDown(self):
         return SilentState()
 
@@ -46,7 +44,7 @@ class SilentState(RingState):
     def ring(self):
         print("Phone is silent")
     def nextVolumeUp(self):
-        return  VibrateState()
+        return VibrateState()
     def nextVolumeDown(self):
         return self
 
