@@ -35,7 +35,6 @@ def isPalindrome(head):
     if head == None:
         return True
     fast, slow = head, head
-    prevEnd = None
     while fast.next and fast.next.next:
         slow = slow.next
         fast = fast.next.next
@@ -51,9 +50,7 @@ def isPalindrome(head):
     slow = slow.next
     prev.next = None
 
-    while slow:
-    # Bug
-    #while slow and slow.next:
+    while slow: # Bug: while slow and slow.next:
         next = slow.next
         slow.next = prev
         prev = slow
@@ -78,8 +75,6 @@ def isPalindrome(head):
     if head2:
         return False
     return True
-
-
 
     return slow.val, fast.val
 
