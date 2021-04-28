@@ -1,8 +1,7 @@
 #RadixSort is only Numbers
 
-
-def radix(l):
-    digits = getMaxdigits(l)
+def radixSort(l):
+    digits = len(str(l)) # same as getMaxdigits(l):
     buckets = [[] for i in range(10)]
     for digit in range(digits):
         for e in l:
@@ -15,7 +14,6 @@ def radix(l):
                 l.append(num)
 
 
-
 def getDigit(num, digit):
     mod = num
     for i in range(digit+1):
@@ -24,13 +22,13 @@ def getDigit(num, digit):
 
 def getMaxdigits(l):
     m = max(l)
-    digits = 0
+    digit = 0
     while m !=0:
         m //= 10
-        digits += 1
-    return digits
+        digit += 1
+    return digit
 
 l = [2,3,44,556,665]
 
-radix(l)
+radixSort(l)
 print(l)

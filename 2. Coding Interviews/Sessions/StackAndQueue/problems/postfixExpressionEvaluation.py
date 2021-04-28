@@ -1,41 +1,26 @@
-from stack import Stack
-
 def evaluate(a, b, c):
     return eval(f"{a} {c} {b}")
-    # result = None
-    # if c == "*":
-    #     result = a * b
-    # elif c == "+":
-    #     result = a + b
-    # elif c == "/":
-    #     result = a / b
-    # elif c == "-":
-    #     result = a - b
-    # else:
-    #     raise ValueError
-    #return result
 
 def evaluate_post_fix(exp):
     # Write your code here
     expr = exp.split()
-    s = Stack()
+    s = []
     while len(expr) != 0:
         if expr[0].isdigit():
             for c in expr[0]:
-                s.push(int(c))
-            # s.push(int(expr[0]))
-            del expr[0]
+                s.append(int(c))
+            expr.pop(0)
         else:
             b = s.pop()
             a = s.pop()
             c = expr[0]
-            del expr[0]
-            s.push(evaluate(a,b,c))
-    if s.size() != 1:
+            expr.pop(0)
+            s.append(evaluate(a,b,c))
+    if len(s) != 1:
         raise ValueError
-    return s.pop()
+    return s[-1]
 
-exp = "9 2 Pattern1:knapsack * - 8 - 4 +"
+exp = "9 2 1 * - 8 - 4 +"
 
 print(exp)
 print(evaluate_post_fix(exp))

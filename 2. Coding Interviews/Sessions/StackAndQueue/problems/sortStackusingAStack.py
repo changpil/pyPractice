@@ -1,88 +1,28 @@
-from stack import Stack
 
 print("*"*10)
 print("*  Solution1 O(n^2) *")
 print("*"*10)
 
 def sort(s):
-    tmp = Stack()
-    while not s.isEmpty():
+    tmp = []
+    while len(s) != 0:
         v = s.pop()
-        while not tmp.isEmpty() and tmp.top() > v:
-            s.push(tmp.pop())
-        tmp.push(v)
+        while len(tmp) != 0 and tmp[-1] > v:
+            s.append(tmp.pop())
+        tmp.append(v)
 
-    while not tmp.isEmpty():
-        s.push(tmp.pop())
+    while len(tmp) != 0:
+        s.append(tmp.pop())
 
-
-s = Stack()
-s.push(-3)
-s.push(10)
-s.push(4)
-s.push(9)
-
-print(s)
+s = [-3, 10, 4, 9]
 sort(s)
 print(s)
 
-print("*"*10)
-print("*  Solution2 recursive way without tmp stock O(n^2)*")
-print("*"*10)
 
-def sort(stack):
-    if stack.isEmpty():
-        return
-
-    v = stack.pop()
-    if stack.size() > 0  and v > stack.top():
-        sort(stack)
-        tmp = stack.pop()
-        stack.push(v)
-        v = tmp
-    sort(stack)
-    stack.push(v)
-
-
-s = Stack()
-s.push(-2);s.push(0);s.push(1);s.push(4);s.push(6);s.push(-1);s.push(10)
-print(s)
+s = [-2, 0, 1, 4, 6, -1, 10]
 sort(s)
 print(s)
 
-s = Stack()
-s.push(23);s.push(60);s.push(12);s.push(42);s.push(4);s.push(97);s.push(2)
-print(s)
+s = [23, 60, 12, 4, 97, 2]
 sort(s)
 print(s)
-#
-# def sort(stack):
-#     if stack.isEmpty():
-#         return
-#         value = stack.pop()
-#
-#         # Sort the remaining stack recursively
-#         sort(stack)
-#
-#         # Push the top element back into the sorted stack
-#         insert(stack, value)
-#
-#
-# def insert(stack, value):
-#     if (stack.isEmpty() or value < stack.top()):
-#         stack.push(value)
-#     else:
-#         temp = stack.pop()
-#         insert(stack, value)
-#         stack.push(temp)
-#
-#
-# s = Stack()
-# s.push(-3)
-# s.push(10)
-# s.push(4)
-# s.push(9)
-#
-# print(s)
-# sort(s)
-# print(s)

@@ -34,7 +34,6 @@ def partition_origin(arr, low, high):
     pivot = arr[high]  # pivot
 
     for j in range(low, high):
-
         # If current element is smaller than or
         # equal to pivot
         if arr[j] <= pivot:

@@ -17,6 +17,7 @@ def _binarySearch(s, e, l, t):
     else:
         return p
 
+# Discourage using the recursive version
 def binarySearch_recursive(l, t):
     i = 0
     j = len(l) -1
