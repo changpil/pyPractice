@@ -1,36 +1,36 @@
 
-# class TreeNode():
-#    def __init__(self, val=None, left_ptr=None, right_ptr=None):
-#        self.val = val
-#        self.left_ptr = left_ptr
-#        self.right_ptr = right_ptr
+class Node():
+   def __init__(self, val=None, left=None, right=None):
+       self.val = val
+       self.left = left
+       self.right = right
 
 # complete the function below
 
+import math
 def isBST(root):
     if root == None:
         return True
+    return _isBTS(root, -math.inf, math.inf)
 
-    l = isBST(root.left_ptr)
-    r = isBST(root.right_ptr)
-
-    if not (l and r):
+def _isBTS(node, left, right):
+    if node == None:
+        return True
+    if not (left < node.val < right):
         return False
 
-    # if root.left_ptr and root.val < root.left_ptr.val:
-    #     return False
-    #
-    # if root.right_ptr and root.val < root.right_ptr.val:
-    #     return False
-
-    if root.left_ptr:
-        maxVal = maxNode(root.left_ptr).val
-        if root.val < maxVal:
-            return False
-
-    if root.right_ptr:
-        minVal = minNode(root.right_ptr).val
-        if root.val > minVal:
-            return False
-
+    leftTree = _isBTS(node.left, left, node.val)
+    if not leftTree:
+        return False
+    rightTree = _isBTS(node.right, node.val, right)
+    if not rightTree:
+        return False
     return True
+
+
+bst = Node(10, Node(4, Node(1), Node(7)), Node(15, Node(13), Node(18)))
+print(isBST(bst))
+
+
+bst = Node(10, Node(4, Node(1), Node(7)), Node(15, Node(13), Node(12)))
+print(isBST(bst))

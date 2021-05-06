@@ -2,7 +2,7 @@
 def subset(l):
     subsets = set()
     word = "".join(l)
-    _subset(word, subsets, len(word) )
+    _subset(word, subsets, len(word))
     return subsets
 
 def _subset(word, subsets, level):

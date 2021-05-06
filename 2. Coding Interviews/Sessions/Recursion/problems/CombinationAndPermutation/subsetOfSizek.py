@@ -24,4 +24,4 @@ def _subset(_list, size, result):
 
 
 l = [1,2,3,4]
-print(subset(l, 2))
+print(subset(l, 4))
