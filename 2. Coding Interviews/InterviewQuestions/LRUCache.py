@@ -15,58 +15,59 @@
 # Heapq with (datetime.now().timestamp(), key) did not solve the problem.
 # Needed to heapify again after delete key in [].
 # You do not need heapify with heappop and heappush. But you need to heapify after del self.heap.remove(key)
-from heapq import *
-from datetime import datetime
+# from heapq import *
+# from datetime import datetime
+#
+# class Item:
+#     def __init__(self, ts, key):
+#         self.ts = ts
+#         self.key = key
+#     def __lt__(self, o):
+#         return self.ts < o.ts
+#         #return o.ts - self.ts
+#     def __str__(self):
+#         return f"[{self.ts}: {self.key}]"
+#
+# # O(n* nlogn)
+# class LRUCache:
+#
+#     def __init__(self, capacity: int):
+#         self.capacity = capacity
+#         self.cache = {}
+#         self.heap = []
+#
+#     def removeHeap(self, key):
+#         for i in range(len(self.heap)):
+#             if self.heap[i].key == key:
+#                 #print(self.heap[i])
+#                 del self.heap[i]
+#                 heapify(self.heap)
+#                 break
+#
+#     def get(self, key: int) -> int:
+#         #print(f"get {key} ")
+#         if key not in self.cache:
+#             return -1
+#
+#         self.removeHeap(key)
+#         heappush(self.heap, Item(datetime.now().timestamp(), key))
+#         return self.cache[key]
+#
+#     def put(self, key: int, value: int) -> None:
+#         #print(f"put {key} ")
+#         if key in self.cache:
+#             self.removeHeap(key)
+#             self.cache.pop(key)
+#
+#         if len(self.cache) == self.capacity:
+#             evict = heappop(self.heap)
+#             self.cache.pop(evict.key)
+#
+#         heappush(self.heap, Item(datetime.now().timestamp(), key))
+#         self.cache[key] = value
+#         #print(self.cache)
 
-class Item:
-    def __init__(self, ts, key):
-        self.ts = ts
-        self.key = key
-    def __lt__(self, o):
-        return self.ts < o.ts
-        #return o.ts - self.ts
-    def __str__(self):
-        return f"[{self.ts}: {self.key}]"
-
-class LRUCache:
-
-    def __init__(self, capacity: int):
-        self.capacity = capacity
-        self.cache = {}
-        self.heap = []
-
-    def removeHeap(self, key):
-        for i in range(len(self.heap)):
-            if self.heap[i].key == key:
-                #print(self.heap[i])
-                del self.heap[i]
-                heapify(self.heap)
-                break
-
-    def get(self, key: int) -> int:
-        #print(f"get {key} ")
-        if key not in self.cache:
-            return -1
-
-        self.removeHeap(key)
-        heappush(self.heap, Item(datetime.now().timestamp(), key))
-        return self.cache[key]
-
-    def put(self, key: int, value: int) -> None:
-        #print(f"put {key} ")
-        if key in self.cache:
-            self.removeHeap(key)
-            self.cache.pop(key)
-
-        if len(self.cache) == self.capacity:
-            evict = heappop(self.heap)
-            self.cache.pop(evict.key)
-
-        heappush(self.heap, Item(datetime.now().timestamp(), key))
-        self.cache[key] = value
-        #print(self.cache)
-
-# O(n)
+# O(1)
 class Node:
     def __init__(self, val=None, prev=None, next=None):
         self.val = val
@@ -82,8 +83,8 @@ class Cache:
 
     def put(self, key, val):
         if key in self.cache:
-            sentinel = self.head
-            next = sentinel.next
+            self.cache[key].val = val
+            # extract the node and move to head
 
         # Cache capacity is full, remove RLU cache
         if self.capacity == len(self.cache):

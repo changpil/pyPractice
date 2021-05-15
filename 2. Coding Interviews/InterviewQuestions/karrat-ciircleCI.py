@@ -1,5 +1,5 @@
 """
-Karat does not have limited questions. As you solve the questions, you will be asked to another questions.
+Karrat does not have limited questions. As you solve the questions, you will be asked to another questions.
 in general, you need to solve more than 2. 5 to 3.
 """
 
