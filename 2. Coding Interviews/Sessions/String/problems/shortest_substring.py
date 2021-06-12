@@ -15,7 +15,7 @@ def substring(w1, w2):
     for i in range(last):
         for j in range(i+1,last):
             sub_str=w1[i:j]
-            print(sub_str)
+            #print(sub_str)
             if w2_set.issubset(set(sub_str)):
                 result[abs(i-j)]=(i,j)
 

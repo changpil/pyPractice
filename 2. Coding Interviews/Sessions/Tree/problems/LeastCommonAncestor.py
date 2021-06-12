@@ -91,6 +91,16 @@ def helper(node, a, b, lcaP):
     if node == b:
         return b
 
+def lca(root, a, b):
+    if root is None:
+        return
+    if root in (a,b):
+        return root.data
+    left = lca(root.left,a,b)
+    right = lca(root.right,a,b)
+    if left and right:
+        return root.data
+    return left or right
 
 def main():
     node = Node(1)

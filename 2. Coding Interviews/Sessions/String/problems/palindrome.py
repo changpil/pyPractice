@@ -89,10 +89,6 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 class Solution:
     def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         back_i = len(s) - 1
         for front_i, c in enumerate(s):
             if not c.isalnum():

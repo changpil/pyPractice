@@ -32,6 +32,24 @@ def foo(node, h, height):
     if node.right:
         foo(node.right, h+1, height)
 
+import collections
+def height(root):
+    queue = collections.deque()
+    queue.append(root)
+    height = -1
+    while queue:
+        n = len(queue)
+        height += 1
+        while n:
+            node = queue.popleft()
+            left =  node.left
+            right = node.right
+            if left:
+                queue.append(left)
+            if right:
+                queue.append(right)
+            n -= 1
+    return height
 
 root = TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))), TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1))))
 print(getTreeHeight(root))

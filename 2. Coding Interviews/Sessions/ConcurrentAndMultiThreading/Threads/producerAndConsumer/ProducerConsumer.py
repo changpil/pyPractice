@@ -1,44 +1,51 @@
 import queue, threading , time
+import logging
+import random
+FORMAT = "[%(threadName)s:%(asctime)s:%(levelname)s] %(message)s"
+logging.basicConfig(filename='example.log', level=logging.DEBUG, format=FORMAT)
 
-#producer Consumer with queue.Queue()
-def worker():
+def producer(queue):
+    #while True:
+    for _ in range(10):
+        item = random.randint(0, 10000)
+        logging.info(f"producer: {item}")
+        queue.put(item)
+        time.sleep(0.5)
 
+def producerFromInput(queue):
+    #while True:
     while True:
-        item = q.get()
-        if item is None:
+        item = input("Enter int (0 for exit):")
+        item = int(item)
+        logging.info(f"producer: {item}")
+        queue.put(item)
+        time.sleep(0.1)
+        if item == 0:
             break
-        print(item)
-        time.sleep(2)
-        q.task_done()
 
-    #If there is no while loop, then the thread can tap one from queue then thread is done.
-    """
-    item = q.get()
-    print(item)
-    time.sleep(2)
-    q.task_done()
-    """
+def consumer(queue):
+    while True:
+        # Wait until queue is filled
+        # item = queue.get()
+        try:
+            # If queue is empty, throw exception
+            item = queue.get(block=False)
+            queue.task_done()
+            logging.info(f"consumer: {item}")
+        except :
+            logging.info("Queue is empty")
+            time.sleep(1)
 
-q = queue.Queue()
-threads = []
-for i in range(10):
-    t = threading.Thread(target=worker)
-    t.start()
-    threads.append(t)
 
-for item in range(30):
-    q.put(item)
+        if item == 0:
+            break
 
-# block until all tasks are done
-#q.join()
+queue = queue.Queue()
+t1 = threading.Thread(name="producer", target=producer, args=(queue,))
+t2 = threading.Thread(name="consumer", target=consumer, args=(queue,))
+t3 = threading.Thread(name="producerFromInput", target=producerFromInput, args=(queue,))
+t1.start()
+t2.start()
+t3.start()
 
-print("enf of q.join")
-# stop workers
-for i in range(10):
-    q.put(None)
 
-#print("enf of q.put(None)")
-#for t in threads:
-#    t.join()
-
-print("end of main"*30)
