@@ -56,3 +56,20 @@ def get_zigzag(a):
 
 cc= zigzag("PAYPALISHIRING", 5)
 print(get_zigzag(cc))
+
+def convert(s, numRows):
+    if numRows == 1:
+        return s
+    result = [[] for _ in range(numRows)]
+    span = numRows + numRows - 2
+    for i in range(len(s)):
+        n = i % span
+        if n < numRows:
+            result[n].append(s[i])
+        else:
+            result[span - n].append(s[i])
+
+    return "".join(map("".join, result))
+
+cc= zigzag("PAYPALISHIRING", 5)
+print(get_zigzag(cc))

@@ -7,8 +7,8 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def inOrder(root, order):
-    stack = []
+def inOrder(root):
+    stack, order = [], []
     cur = root
     while cur or stack:
         while cur:
@@ -18,7 +18,7 @@ def inOrder(root, order):
         cur = stack.pop()
         order.append(cur.val)
         cur = cur.right
-
+    return order
 
 
 def main():
@@ -29,7 +29,8 @@ def main():
     root.right.left = TreeNode(15)
     root.right.right = TreeNode(26)
 
-    inO = []
-    inOrder(root, inO)
-    print(inO)
+    print(inOrder(root))
+
 main()
+
+

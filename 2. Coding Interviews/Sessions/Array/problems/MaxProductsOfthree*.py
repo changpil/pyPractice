@@ -61,11 +61,20 @@ import math
 #     return maxV
 
 # 0(NlogN)
-def maxFromThreeValues(A):
-    A.sort()
-    for i in range(2, len(A)):
-        if A[i] < A[i-1] + A[i-2]:
-            return 1
-    return 0
+def maxFromThreeValues(arr):
+    if len(arr) < 4:
+        return None
+    arr.sort()
+    if arr[0] * arr[-1] < 0:
+        return max(arr[0] * arr[1] * arr[-1], arr[-1] * arr[-2] * arr[-3])
+    return arr[-1] * arr[-2] * arr[-3]
+A = [3, 1, 2, 2, 5, 6]
+print(maxFromThreeValues(A))
+A = [-3, -1, -2, -2, -5, -6]
+print(maxFromThreeValues(A))
 A = [-3, 1, 2, -2, 5, 6]
+print(maxFromThreeValues(A))
+A = [-3, 1, 2, -2, 5, -6]
+print(maxFromThreeValues(A))
+A = [-3, 1, 2, -2, -5, -6]
 print(maxFromThreeValues(A))
